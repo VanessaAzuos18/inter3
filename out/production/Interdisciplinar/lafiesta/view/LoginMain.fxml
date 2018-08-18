@@ -8,19 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="tela-login" prefHeight="591.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LoginMainController">
+<AnchorPane id="tela-login" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LoginMainController">
    <children>
-      <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="151.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="30.0" prefWidth="98.0" text="Cadastrar-se" textFill="WHITE" />
-      <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="111.0" layoutY="209.0" maxHeight="25.0" maxWidth="413.0" prefHeight="25.0" prefWidth="413.0" />
-      <PasswordField id="campo-login-senha" fx:id="campoLoginSenha" layoutX="111.0" layoutY="263.0" maxHeight="25.0" maxWidth="413.0" prefHeight="25.0" prefWidth="413.0" />
-      <CheckBox layoutX="66.0" layoutY="378.0" mnemonicParsing="false" text="lembrar de mim" />
-      <Group layoutX="381.0" layoutY="391.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
-            <Text layoutX="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clique aqui" />
-         </children>
-      </Group>
+      <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="154.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="30.5" prefWidth="107.5" text="Cadastrar-se" textFill="WHITE" />
+      <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="93.0" layoutY="294.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" />
+      <PasswordField id="campo-login-senha" fx:id="campoLoginSenha" layoutX="93.0" layoutY="372.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" />
+      <CheckBox id="check" layoutX="70.0" layoutY="410.0" mnemonicParsing="false" text="lembrar de mim" />
+      <Group layoutX="427.0" layoutY="414.0" />
       <Group />
-      <Button id="botao-login" layoutX="63.0" layoutY="462.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="65.0" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
+      <Button id="botao-login" layoutX="70.0" layoutY="466.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="71.0" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
+      <Text layoutX="423.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
+      <Text layoutX="538.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clique aqui" />
    </children>
 </AnchorPane>

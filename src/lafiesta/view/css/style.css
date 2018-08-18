@@ -1,7 +1,13 @@
+@font-face {
+    font-family: Glegoo;
+    src: url('../../../res/fonts/Glegoo-Regular.ttf');
+}
+
 #tela-login {
-    -fx-background-image: url("../../../res/teste.png");
+    -fx-background-image: url("../../../res/TELAS/login.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
+    -fx-font-family: Glegoo;
 }
 
 #botao-login, #botao-cadastro {
@@ -10,15 +16,20 @@
     -fx-margin: 600px;
 }
 
+#check {
+    widht: 5px;
+    height: 5px;
+}
+
 #botao-login {
-    -fx-background-color: #EE3D36;
+    -fx-background-color: #EF3E36;
     -fx-spacing: 60px;
     -fx-position: absolute;
     -fx-: 700px;
 }
 
 #botao-cadastro {
-    -fx-background-color: #2D282A;
+    -fx-background-color: #2E282A;
 }
 
 #campo-login-email, #campo-login-senha {
