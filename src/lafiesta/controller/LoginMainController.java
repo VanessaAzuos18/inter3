@@ -57,6 +57,8 @@ public class LoginMainController {
 
         root = FXMLLoader.load(getClass().getResource("../view/Cadastro.fxml"));
 
+        CadastroController teste = new CadastroController();
+
         Stage stage = new Stage();
         Scene scene = new Scene(root);
 

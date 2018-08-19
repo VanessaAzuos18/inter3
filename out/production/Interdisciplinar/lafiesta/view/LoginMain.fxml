@@ -10,14 +10,15 @@
 
 <AnchorPane id="tela-login" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LoginMainController">
    <children>
-      <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="154.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="30.5" prefWidth="107.5" text="Cadastrar-se" textFill="WHITE" />
-      <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="93.0" layoutY="294.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" />
-      <PasswordField id="campo-login-senha" fx:id="campoLoginSenha" layoutX="93.0" layoutY="372.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" />
+      <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="154.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="30.5" prefWidth="107.5" styleClass="botao" text="Cadastrar-se" textFill="WHITE" />
+      <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="93.0" layoutY="294.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" styleClass="campo-formulario" />
+      <PasswordField id="campo-login-senha" fx:id="campoLoginSenha" layoutX="93.0" layoutY="372.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" styleClass="campo-formulario" />
       <CheckBox id="check" layoutX="70.0" layoutY="410.0" mnemonicParsing="false" text="lembrar de mim" />
       <Group layoutX="427.0" layoutY="414.0" />
       <Group />
-      <Button id="botao-login" layoutX="70.0" layoutY="466.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="71.0" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
-      <Text layoutX="423.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
-      <Text layoutX="538.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clique aqui" />
+      <Button id="botao-login" layoutX="70.0" layoutY="466.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="71.0" styleClass="botao" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
+      <Text layoutX="397.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
+      <Text layoutX="532.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clique aqui" />
+      <Text layoutX="255.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saiba mais sobre o lafiesta" />
    </children>
 </AnchorPane>

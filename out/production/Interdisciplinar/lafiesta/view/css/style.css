@@ -1,10 +1,16 @@
+@font-face {
+    font-family: Glegoo;
+    src: url('../../../res/fonts/Glegoo-Regular.ttf');
+}
+
 #tela-login {
     -fx-background-image: url("../../../res/TELAS/login.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
+    -fx-font-family: Glegoo;
 }
 
-#botao-login, #botao-cadastro {
+.botao {
     -fx-background-radius: 0; /*Remove as bordas arredondadas dos botoes*/
     -fx-cursor: hand;
     -fx-margin: 600px;
@@ -17,16 +23,13 @@
 
 #botao-login {
     -fx-background-color: #EF3E36;
-    -fx-spacing: 60px;
-    -fx-position: absolute;
-    -fx-: 700px;
 }
 
 #botao-cadastro {
     -fx-background-color: #2E282A;
 }
 
-#campo-login-email, #campo-login-senha {
+.campo-formulario {
     -fx-background-radius: 0;
     -fx-text-box-border: transparent; /*Deixa a borda dos campos transparentes*/
     -fx-focus-color: transparent; /*Deixa o focus dos campos transparentes*/
@@ -37,8 +40,38 @@
     -fx-pos: 100px;
 }
 
-#tela-cadastro {
-    -fx-background-image: url("../../../res/cadastro-cliente.png");
+#tela-cadastro-cliente {
+    -fx-font-family: Glegoo;
+    -fx-background-image: url("../../../res/TELAS/cadastro-cliente.png");
     -fx-background-size: cover;
     -fx-marginm-bottom: 500px;
 }
+
+#tela-cadastro-fornecedor {
+    -fx-font-family: Glegoo;
+    -fx-background-image: url("../../../res/TELAS/cadatro-fornecedor.png");
+    -fx-background-size: cover;
+    -fx-marginm-bottom: 500px;
+}
+
+.texto-voltar {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+#botao-tela-cadastro {
+    -fx-background-color: #EF3E36;
+}
+
+.botao-menu-superior {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.esconder-tela {
+    visibility: hidden;
+}
+
+#tela-cadastro-fornecedor {
+}
+
