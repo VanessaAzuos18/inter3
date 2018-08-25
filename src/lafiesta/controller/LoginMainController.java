@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
@@ -21,6 +22,8 @@ public class LoginMainController {
     private TextField campoLoginSenha;
     @FXML
     private Button botaoCadastro;
+    @FXML
+    private Hyperlink recuperarSenha = new Hyperlink();
 
     @FXML
     public void login(ActionEvent event) {
@@ -63,6 +66,37 @@ public class LoginMainController {
         Scene scene = new Scene(root);
 
         stage.setTitle("Cadastro");
+        stage.setScene(scene);
+        stage.show();
+
+        botaoCadastro.getScene().getWindow().hide();
+    }
+
+    public void handlerecuperarSenha (ActionEvent event) throws IOException{
+        /*
+        Stage stage;
+        Parent root;
+
+        root = FXMLLoader.load(getClass().getResource("../view/Cadastro.fxml"));
+
+        Scene scene = new Scene(root);
+
+        stage = (Stage) botaoCadastro.getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+        */
+
+        Parent root;
+
+        root = FXMLLoader.load(getClass().getResource("../view/RecuperarSenha.fxml"));
+
+        RecuperarSenhaController teste = new RecuperarSenhaController();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Recuperar Senha");
         stage.setScene(scene);
         stage.show();
 

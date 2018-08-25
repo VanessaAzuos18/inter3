@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="commons-email-1.5-javadoc">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/commons-email-1.5-bin/commons-email-1.5/commons-email-1.5-tests.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/commons-email-1.5-bin/commons-email-1.5/commons-email-1.5.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/smtp-1.4.4.jar/smtp-1.4.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/commons-email-1.5-bin/commons-email-1.5/commons-email-1.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/commons-email-1.5-bin/commons-email-1.5/commons-email-1.5-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/commons-email-1.5-bin/commons-email-1.5/commons-email-1.5-test-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -3,6 +3,7 @@
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +19,7 @@
       <Group />
       <Button id="botao-login" layoutX="70.0" layoutY="466.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="71.0" styleClass="botao" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
       <Text layoutX="397.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
-      <Text layoutX="532.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="clique aqui" />
       <Text layoutX="255.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saiba mais sobre o lafiesta" />
+      <Hyperlink layoutX="529.0" layoutY="407.0" onAction="#handlerecuperarSenha" text="Clique Aqui" />
    </children>
 </AnchorPane>
