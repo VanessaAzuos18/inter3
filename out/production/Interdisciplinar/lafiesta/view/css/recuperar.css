@@ -1,0 +1,22 @@
+@font-face {
+    font-family: Glegoo;
+    src: url('../../../res/fonts/Glegoo-Regular.ttf');
+}
+
+#tela-recuperar-senha {
+    -fx-font-family: Glegoo;
+    -fx-background-image: url("../../../res/TELAS/recuperar-senha.png");
+    -fx-background-size: cover;
+    -fx-marginm-bottom: 700px;
+}
+
+.campo-formulario {
+    -fx-background-radius: 0;
+    -fx-text-box-border: transparent; /*Deixa a borda dos campos transparentes*/
+    -fx-focus-color: transparent; /*Deixa o focus dos campos transparentes*/
+    -fx-background-color: transparent;
+}
+
+#botao-recuperar {
+    -fx-background-color: #2E282A;
+}

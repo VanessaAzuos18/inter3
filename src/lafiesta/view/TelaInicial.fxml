@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="tela-inicial" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/TelaInicial.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.TelaInicialController">
+   <children>
+      <Label id="nome" fx:id="nome" layoutX="161.0" layoutY="115.0" text="Label" />
+   </children>
+</AnchorPane>

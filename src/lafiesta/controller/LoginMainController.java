@@ -10,10 +10,20 @@ import javafx.scene.control.Button;
 
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
+import lafiesta.Main;
+import lafiesta.model.BDFabricaConexao;
+import lafiesta.model.Login;
+import lafiesta.model.Usuario;
 
 import javax.swing.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginMainController {
     @FXML
@@ -26,18 +36,30 @@ public class LoginMainController {
     private Hyperlink recuperarSenha = new Hyperlink();
 
     @FXML
-    public void login(ActionEvent event) {
+    public void login(ActionEvent event) throws IOException {
         String loginDigitado = campoLoginEmail.getText();
         String senhaDigitado = campoLoginSenha.getText();
-        String login = "teste";
-        String senha = "teste";
 
-        if(loginDigitado.equals(login) && senhaDigitado.equals(senha)) {
-            System.out.println("LOGIN SUCESSO");
-            JOptionPane.showMessageDialog(null, "Login com sucesso");
-        } else {
-            JOptionPane.showMessageDialog(null, "Login errado");
-        }
+        Usuario usuario = new Login().verificaUsuario(loginDigitado, senhaDigitado);
+
+        if(usuario != null){
+            Parent root;
+
+            root = FXMLLoader.load(getClass().getResource("../view/TelaInicial.fxml"));
+
+            TelaInicialController telaInicial = new TelaInicialController();
+            telaInicial.setNome(usuario.getNome());
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+
+            stage.setTitle("Tela Inicial");
+            stage.setScene(scene);
+            stage.show();
+
+            botaoCadastro.getScene().getWindow().hide();
+        }else JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+
     }
 
     @FXML

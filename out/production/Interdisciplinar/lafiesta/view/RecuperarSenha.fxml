@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="tela-recuperar-senha" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/recuperar.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.RecuperarSenhaController">
+   <children>
+      <TextField id="campo-recuperar-email" fx:id="campoRecuperarEmail" layoutX="107.0" layoutY="294.0" maxHeight="31.0" maxWidth="508.0" prefHeight="31.0" prefWidth="496.0" styleClass="campo-formulario" />
+      <TextField id="campo-recuperar-doc" fx:id="campoRecuperarDoc" layoutX="163.0" layoutY="371.0" maxHeight="31.0" maxWidth="508.0" prefHeight="31.0" prefWidth="443.0" styleClass="campo-formulario" />
+      <Button id="botao-recuperar" fx:id="botaoCadastro" layoutX="517.0" layoutY="466.0" mnemonicParsing="false" onAction="#Recuperar" prefHeight="31.0" prefWidth="87.0" styleClass="botao" text="Recuperar" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Glegoo;
+    src: url('../../../res/fonts/Glegoo-Regular.ttf');
+}
+
+#tela-inicial {
+    -fx-font-family: Glegoo;
+    -fx-background-image: url("../../../res/TELAS/tela-inicial.png");
+    -fx-background-size: cover;
+    -fx-marginm-bottom: 700px;
+}
+
+#botao-adicionar {
+    -fx-background-color: #EF3E36;
+}
+
+#botao-remover {
+    -fx-background-color: #2E282A;
+}
