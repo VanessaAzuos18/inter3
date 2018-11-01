@@ -1,22 +1,23 @@
 package lafiesta.controller;
 
 
-import org.apache.commons.mail.*;
+//import org.apache.commons.mail.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
-
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+/*
+//import javax.mail.*;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.net.MalformedURLException;
 import java.util.Properties;
-
+*/
 
 public class RecuperarSenhaController {
+    /*
     @FXML
     private TextField campoRecuperarEmail;
     @FXML
@@ -53,5 +54,5 @@ public class RecuperarSenhaController {
 
         JOptionPane.showMessageDialog(null, "E-mail enviado com sucesso!");
 
-    }
+    }*/
 }
