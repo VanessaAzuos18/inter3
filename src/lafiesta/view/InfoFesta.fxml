@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.InfoFestaController">
+   <children>
+      <Text layoutX="21.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da festa?" />
+      <Text layoutX="273.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField layoutX="21.0" layoutY="133.0" prefHeight="25.0" prefWidth="177.0" styleClass="campo-formulario" />
+      <Text layoutX="325.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da festa?" />
+      <TextField layoutX="486.0" layoutY="136.0" prefHeight="25.0" prefWidth="177.0" styleClass="campo-formulario" />
+      <Text layoutX="50.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da festa?" />
+      <TextField layoutX="50.0" layoutY="220.0" prefHeight="25.0" prefWidth="177.0" styleClass="campo-formulario" />
+   </children>
+</AnchorPane>

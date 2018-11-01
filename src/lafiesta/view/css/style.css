@@ -4,9 +4,19 @@
 }
 
 #tela-login {
+<<<<<<< HEAD
+    /*-fx-background-image: url("../../../res/design/telas/login.png");*/
+    /*-fx-background-size: cover;*/
+    /*-fx-background-repeat: no-repeat;*/
+    -fx-font-family: Glegoo;
+}
+
+.titulos {
+=======
     -fx-background-image: url("../../../res/design/telas/login.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
+>>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
     -fx-font-family: Glegoo;
 }
 
@@ -31,9 +41,10 @@
 
 .campo-formulario {
     -fx-background-radius: 0;
-    -fx-text-box-border: transparent; /*Deixa a borda dos campos transparentes*/
+    -fx-border-width: 0 0 1 0;
     -fx-focus-color: transparent; /*Deixa o focus dos campos transparentes*/
     -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #2E282A transparent;
 }
 
 #gambiarra {
