@@ -10,20 +10,10 @@ import javafx.scene.control.Button;
 
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-import lafiesta.Main;
-import lafiesta.model.BDFabricaConexao;
 import lafiesta.model.Login;
 import lafiesta.model.Usuario;
-
 import javax.swing.*;
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LoginMainController {
     @FXML
@@ -42,7 +32,7 @@ public class LoginMainController {
 
         Usuario usuario = new Login().verificaUsuario(loginDigitado, senhaDigitado);
 
-        if(usuario != null){
+        if (usuario != null) {
             Parent root;
 
             root = FXMLLoader.load(getClass().getResource("../view/TelaInicial.fxml"));
@@ -58,12 +48,12 @@ public class LoginMainController {
             stage.show();
 
             botaoCadastro.getScene().getWindow().hide();
-        }else JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+        } else JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
 
     }
 
     @FXML
-    public void handleBotaoCadastro (ActionEvent event) throws IOException{
+    public void handleBotaoCadastro(ActionEvent event) throws IOException {
         /*
         Stage stage;
         Parent root;
@@ -94,7 +84,7 @@ public class LoginMainController {
         botaoCadastro.getScene().getWindow().hide();
     }
 
-    public void handlerecuperarSenha (ActionEvent event) throws IOException{
+    public void handlerecuperarSenha(ActionEvent event) throws IOException {
         /*
         Stage stage;
         Parent root;

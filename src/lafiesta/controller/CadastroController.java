@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -50,5 +52,22 @@ public class CadastroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         telaCadastroFornecedor.setVisible(false);
+    }
+
+    public void voltar(MouseEvent mouseEvent) throws IOException {
+        Parent root;
+
+        root = FXMLLoader.load(getClass().getResource("../view/LoginMain.fxml"));
+
+        CadastroController teste = new CadastroController();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Cadastro");
+        stage.setScene(scene);
+        stage.show();
+        stage = (Stage) voltar.getScene().getWindow(); //Obtendo a janela atual
+        stage.close();
     }
 }
