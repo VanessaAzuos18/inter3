@@ -15,6 +15,7 @@
 
 <AnchorPane id="tela-login" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LoginMainController">
    <children>
+<<<<<<< HEAD
       <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="140.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="33.0" prefWidth="120.0" styleClass="botao" text="Cadastrar-se" textFill="WHITE" />
       <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="43.0" layoutY="294.0" maxHeight="32.0" maxWidth="565.0" prefHeight="32.0" prefWidth="565.0" styleClass="campo-formulario">
          <padding>
@@ -29,6 +30,16 @@
       <Group />
       <Button id="botao-login" layoutX="43.0" layoutY="493.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="78.0" styleClass="botao" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
       <Text layoutX="402.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
+=======
+      <Button id="botao-cadastro" fx:id="botaoCadastro" layoutX="147.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleBotaoCadastro" prefHeight="30.5" prefWidth="107.5" styleClass="botao" text="Cadastrar-se" textFill="WHITE" />
+      <TextField id="campo-login-email" fx:id="campoLoginEmail" layoutX="93.0" layoutY="294.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" styleClass="campo-formulario" />
+      <PasswordField id="campo-login-senha" fx:id="campoLoginSenha" layoutX="93.0" layoutY="372.0" maxHeight="25.0" maxWidth="508.0" prefHeight="25.0" prefWidth="508.0" styleClass="campo-formulario" />
+      <CheckBox id="check" layoutX="47.0" layoutY="410.0" mnemonicParsing="false" text="lembrar de mim" />
+      <Group layoutX="427.0" layoutY="414.0" />
+      <Group />
+      <Button id="botao-login" layoutX="47.0" layoutY="494.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="71.0" styleClass="botao" stylesheets="@css/style.css" text="Login" textFill="WHITE" />
+      <Text layoutX="397.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="esqueceu sua senha?" />
+>>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
       <Text layoutX="255.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saiba mais sobre o lafiesta" />
       <Hyperlink layoutX="534.0" layoutY="406.0" onAction="#handlerecuperarSenha" text="Clique Aqui" />
       <ImageView fitHeight="211.0" fitWidth="269.0" layoutX="208.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">

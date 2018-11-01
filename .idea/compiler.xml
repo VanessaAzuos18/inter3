@@ -12,6 +12,9 @@
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
+<<<<<<< HEAD
     <bytecodeTargetLevel target="Same as language level" />
+=======
+>>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
   </component>
 </project>
