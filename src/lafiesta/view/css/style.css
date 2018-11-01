@@ -4,19 +4,16 @@
 }
 
 #tela-login {
-<<<<<<< HEAD
     /*-fx-background-image: url("../../../res/design/telas/login.png");*/
     /*-fx-background-size: cover;*/
     /*-fx-background-repeat: no-repeat;*/
     -fx-font-family: Glegoo;
 }
 
-.titulos {
-=======
+ .titulos {
     -fx-background-image: url("../../../res/design/telas/login.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
->>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
     -fx-font-family: Glegoo;
 }
 

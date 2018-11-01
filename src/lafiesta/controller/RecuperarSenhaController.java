@@ -3,22 +3,13 @@ package lafiesta.controller;
 
 //import org.apache.commons.mail.*;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-
-import javafx.event.ActionEvent;
-<<<<<<< HEAD
-/*
-=======
-
->>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
 //import javax.mail.*;
 //import javax.mail.internet.InternetAddress;
 //import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.net.MalformedURLException;
 import java.util.Properties;
-*/
+
 
 public class RecuperarSenhaController {
     /*
@@ -28,7 +19,6 @@ public class RecuperarSenhaController {
     private TextField campoRecuperarDoc;
 
 
-<<<<<<< HEAD
     @FXML
     public void Recuperar(ActionEvent event) throws EmailException, MalformedURLException, MessagingException {
         String to = campoRecuperarEmail.getText();
@@ -60,8 +50,8 @@ public class RecuperarSenhaController {
         JOptionPane.showMessageDialog(null, "E-mail enviado com sucesso!");
 
     }*/
-}
-=======
+//}
+
 //    @FXML
 //    public void Recuperar(ActionEvent event) throws EmailException, MalformedURLException, MessagingException {
 //        String to = campoRecuperarEmail.getText();
@@ -94,4 +84,3 @@ public class RecuperarSenhaController {
 //
 //    }
 }
->>>>>>> 022946168bc465fcf2f8cd042b885716dbe57285
