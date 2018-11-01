@@ -38,7 +38,7 @@ public class LoginMainController {
             root = FXMLLoader.load(getClass().getResource("../view/TelaInicial.fxml"));
 
             TelaInicialController telaInicial = new TelaInicialController();
-            telaInicial.setNome(usuario.getNome());
+//            telaInicial.setNome(usuario.getNome());
 
             Stage stage = new Stage();
             Scene scene = new Scene(root);
