@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="tela-inicial" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/TelaInicial.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.TelaInicialController">
    <children>
       <Label id="nome" fx:id="nome" layoutX="161.0" layoutY="115.0" text="Label" />
+      <Button fx:id="botaoMenu" layoutX="599.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleMenu" prefHeight="15.0" prefWidth="21.0" styleClass="botao-menu-superior" stylesheets="@css/style.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane fx:id="menu" layoutX="504.0" layoutY="44.0" prefHeight="128.0" prefWidth="117.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <Text layoutX="40.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Texto 3" />
+            <Text layoutX="40.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Texto 1" />
+            <Text layoutX="40.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Texto 2" />
+         </children></AnchorPane>
+      <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="600.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

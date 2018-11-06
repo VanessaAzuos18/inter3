@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
+   <children>
+      <Text layoutX="91.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
+         <font>
+            <Font name="Glegoo" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="38.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da sua festa:" />
+      <TextField layoutX="40.0" layoutY="136.0" styleClass="campo-formulario" stylesheets="@css/style.css" />
+   </children>
+</AnchorPane>
