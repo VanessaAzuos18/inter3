@@ -8,8 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +26,12 @@ public class CadastroController implements Initializable {
     private AnchorPane telaCadastroCliente;
     @FXML
     private AnchorPane telaCadastroFornecedor;
+    @FXML
+    private Button botaoCadastroCliente;
+    @FXML
+    private Button botaoCadastroFornecedor;
+    @FXML
+    private ImageView imagemAba1;
 
     public void handleBotaoVoltar(ActionEvent event) throws IOException {
         Parent root;
