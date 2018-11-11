@@ -9,9 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
 import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lafiesta.model.Login;
-import lafiesta.model.Usuario;
+import lafiesta.model.domain.Usuario;
+import lafiesta.model.dao.UsuarioDAO;
+
 import javax.swing.*;
 import java.io.IOException;
 
@@ -30,21 +32,34 @@ public class LoginMainController {
         String loginDigitado = campoLoginEmail.getText();
         String senhaDigitado = campoLoginSenha.getText();
 
-        Usuario usuario = new Login().verificaUsuario(loginDigitado, senhaDigitado);
+        //Usuario usuario = new Login().verificaUsuario(loginDigitado, senhaDigitado);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        boolean flag = usuarioDAO.verificarUsuario(loginDigitado, senhaDigitado);
+
+        Usuario usuario;
+
+        if(flag) {
+            usuario = usuarioDAO.carregarUsuario(loginDigitado, senhaDigitado);
+        } else {
+            usuario = null;
+        }
 
         if (usuario != null) {
-            Parent root;
+            FXMLLoader loader = new FXMLLoader();
 
-            root = FXMLLoader.load(getClass().getResource("../view/TelaInicial.fxml"));
+            loader.setLocation(getClass().getResource("../view/TelaInicial.fxml"));
 
-            TelaInicialController telaInicial = new TelaInicialController();
-//            telaInicial.setNome(usuario.getNome());
+            AnchorPane anchorPane = (AnchorPane) loader.load();
 
             Stage stage = new Stage();
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(anchorPane);
 
             stage.setTitle("Tela Inicial");
             stage.setScene(scene);
+
+            TelaInicialController controller = loader.getController();
+            controller.setUsuario(usuario);
+
             stage.show();
 
             botaoCadastro.getScene().getWindow().hide();

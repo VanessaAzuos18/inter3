@@ -1,20 +1,20 @@
-package lafiesta.model;/*
+package lafiesta.model.database;/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Lucas Tardioli
  */
-public class BDConexaoMySQL extends BDConexao {    
+public class BDConexaoMySQL extends BDConexao {
     
     public BDConexaoMySQL() {
         

@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lafiesta.model.domain.Usuario;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,8 +25,7 @@ public class TelaInicialController implements Initializable {
     @FXML
     private Button menuBotao;
 
-    //
-
+    private Usuario usuario;
 
     public void setNome(String nomeUsuario){
         this.nome.setText(nomeUsuario);
@@ -37,6 +37,11 @@ public class TelaInicialController implements Initializable {
         } else {
             menu.setVisible(false);
         }
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        nome.setText(usuario.getNome());
     }
 
     @Override
