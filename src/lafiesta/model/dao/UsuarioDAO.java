@@ -60,4 +60,27 @@ public class UsuarioDAO {
             return null;
         }
     }
+
+    public boolean cadastrar(Usuario usuario){
+        try {
+            String sql = null;
+
+            if(usuario.getTipo() == 1){
+                sql = "insert into usuario (nome, nome_usuario, endereco, telefone, senha, email, tipo, cpf) values (\"" + usuario.getNome() + "\", \"" + usuario.getNome() + "\", \""+
+                        usuario.getEndereco() + "\", \"" + usuario.getTelefone() + "\", \"" + usuario.getSenha() + "\", \"" + usuario.getEmail() + "\", " + usuario.getTipo() + ", \"" + usuario.getCpf() + "\");";
+            }else if(usuario.getTipo() == 2){
+                sql = "insert into usuario (nome, nome_usuario, endereco, telefone, senha, email, tipo, cnpj) values (\"" + usuario.getNome() + "\", \"" + usuario.getNome() + "\", \""+
+                        usuario.getEndereco() + "\", \"" + usuario.getTelefone() + "\", \"" + usuario.getSenha() + "\", \"" + usuario.getEmail() + "\", " + usuario.getTipo() + ", \"" + usuario.getCnpj() + "\");";
+            }
+
+            System.out.println(sql);
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.executeUpdate();
+
+            return true;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }

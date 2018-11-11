@@ -15,7 +15,7 @@
    <children>
       <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroCliente" prefHeight="590.0" prefWidth="650.0">
          <children>
-            <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
+            <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" onAction="#cadastro" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
             <ImageView fitHeight="211.0" fitWidth="269.0" layoutX="216.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../res/design/logo.png" />
@@ -27,31 +27,31 @@
                </font>
             </Text>
             <Text layoutX="42.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
-            <TextField layoutX="42.0" layoutY="210.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+            <TextField fx:id="nome_cliente" layoutX="42.0" layoutY="210.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="45.0" />
                </padding>
             </TextField>
             <Text layoutX="41.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" />
-            <TextField layoutX="41.0" layoutY="258.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+            <TextField fx:id="email_cliente" layoutX="41.0" layoutY="258.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="47.0" />
                </padding>
             </TextField>
             <Text layoutX="41.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:" />
-            <TextField layoutX="41.0" layoutY="307.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+            <TextField fx:id="endereco_cliente" layoutX="41.0" layoutY="307.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="64.0" top="1.0" />
                </padding>
             </TextField>
             <Text layoutX="42.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" />
-            <TextField layoutX="42.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
+            <TextField fx:id="telefone_cliente" layoutX="42.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="58.0" top="1.0" />
                </padding>
             </TextField>
             <Text layoutX="353.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:" />
-            <TextField layoutX="353.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
+            <TextField fx:id="cpf_cliente" layoutX="353.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="28.0" />
                </padding>
@@ -63,13 +63,13 @@
                   <Image url="@../../res/design/icons/arrow.png" />
                </image>
             </ImageView>
-            <Text fill="#ef3e36" layoutX="53.0" layoutY="545.0" onMouseClicked="#voltar" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
-            <PasswordField layoutX="42.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
+            <Text fill="#ef3e36" layoutX="53.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+            <PasswordField fx:id="senha_cliente" layoutX="42.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="45.0" top="7.0" />
                </padding>
             </PasswordField>
-            <PasswordField layoutX="353.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
+            <PasswordField fx:id="confir_senha_cliente" layoutX="353.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="108.0" top="7.0" />
                </padding>
@@ -89,7 +89,11 @@
       </AnchorPane>
       <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroFornecedor" prefHeight="590.0" prefWidth="650.0">
          <children>
-            <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
+            <TextField fx:id="endereco_fornec" layoutX="41.0" layoutY="307.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+               <padding>
+                  <Insets left="64.0" top="1.0" />
+               </padding>
+            </TextField>
             <ImageView fitHeight="211.0" fitWidth="232.0" layoutX="216.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../res/design/logo.png" />
@@ -101,31 +105,26 @@
                </font>
             </Text>
             <Text layoutX="42.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
-            <TextField layoutX="42.0" layoutY="210.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+            <TextField fx:id="nome_fornec" layoutX="42.0" layoutY="210.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="45.0" />
                </padding>
             </TextField>
             <Text layoutX="41.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" />
-            <TextField layoutX="41.0" layoutY="258.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
+            <TextField fx:id="email_fornec" layoutX="41.0" layoutY="258.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="47.0" />
                </padding>
             </TextField>
             <Text layoutX="41.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço:" />
-            <TextField layoutX="41.0" layoutY="307.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
-               <padding>
-                  <Insets left="64.0" top="1.0" />
-               </padding>
-            </TextField>
             <Text layoutX="42.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" />
-            <TextField layoutX="42.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
+            <TextField fx:id="telefone_fornec" layoutX="42.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="58.0" top="1.0" />
                </padding>
             </TextField>
             <Text layoutX="353.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
-            <TextField layoutX="353.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
+            <TextField fx:id="cnpj_fornec" layoutX="353.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="28.0" />
                </padding>
@@ -137,13 +136,13 @@
                   <Image url="@../../res/design/icons/arrow.png" />
                </image>
             </ImageView>
-            <Text fill="#ef3e36" layoutX="53.0" layoutY="545.0" onMouseClicked="#voltar" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
-            <PasswordField layoutX="42.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
+            <Text fill="#ef3e36" layoutX="53.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+            <PasswordField fx:id="senha_fornec" layoutX="42.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="45.0" top="7.0" />
                </padding>
             </PasswordField>
-            <PasswordField layoutX="353.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
+            <PasswordField fx:id="confir_senha_fornec" layoutX="353.0" layoutY="395.0" prefHeight="31.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
                   <Insets left="108.0" top="7.0" />
                </padding>
@@ -160,6 +159,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" onAction="#cadastroCnpj" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

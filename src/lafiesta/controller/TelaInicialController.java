@@ -42,6 +42,7 @@ public class TelaInicialController implements Initializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         nome.setText(usuario.getNome());
+        System.out.println(usuario.getTipo());
     }
 
     @Override
