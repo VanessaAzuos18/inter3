@@ -48,10 +48,17 @@
             </Text>
          </children></AnchorPane>
       <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="600.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView layoutX="77.0" layoutY="248.0" prefHeight="185.0" prefWidth="496.0">
+      <TableView fx:id="tabela" layoutX="78.0" layoutY="246.0" prefHeight="190.0" prefWidth="496.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+           <TableColumn fx:id="id" prefWidth="102.0" text="Id" />
+           <TableColumn fx:id="nome_festa" prefWidth="102.0" text="Nome da Festa" />
+          <TableColumn fx:id="data" prefWidth="48.0" text="Data" />
+            <TableColumn fx:id="local" prefWidth="48.0" text="Local" />
+            <TableColumn fx:id="convidados" prefWidth="88.0" text="Convidados" />
+           <TableColumn maxWidth="40" minWidth="40" text="" />
         </columns>
       </TableView>
       <Label id="tipo" fx:id="tipo" layoutX="164.0" layoutY="136.0" text="Label" />
@@ -60,5 +67,6 @@
             <Font size="23.0" />
          </font>
       </Text>
+      <Button id="botao-remover" fx:id="botaoCadastro" layoutX="464.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -4,7 +4,7 @@
 }
 
 #tela-login {
-    -fx-background-image: url("../../../res/design/telas/CadastroConvidado.png");
+    /*-fx-background-image: url("../../../res/design/telas/login.png");*/
     /*-fx-background-size: cover;*/
     /*-fx-background-repeat: no-repeat;*/
     -fx-font-family: Glegoo;
