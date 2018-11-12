@@ -5,15 +5,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
+<AnchorPane prefHeight="465.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
    <children>
-      <Text layoutX="91.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
+      <Text fill="#ef3e36" layoutX="91.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
          <font>
             <Font name="Glegoo" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="38.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da sua festa:" />
-      <TextField layoutX="40.0" layoutY="136.0" styleClass="campo-formulario" stylesheets="@css/style.css" />
+      <Text layoutX="69.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da sua festa?" />
+      <TextField layoutX="69.0" layoutY="136.0" prefHeight="25.0" prefWidth="187.0" />
+      <Text layoutX="368.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A data desse evento incrível será em:" />
+      <TextField layoutX="368.0" layoutY="136.0" prefHeight="25.0" prefWidth="208.0" />
+      <Text layoutX="69.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em qual local:" />
+      <TextField layoutX="69.0" layoutY="213.0" prefHeight="25.0" prefWidth="187.0" />
+      <Text layoutX="368.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em qual local:" />
+      <TextField layoutX="368.0" layoutY="213.0" prefHeight="25.0" prefWidth="208.0" />
    </children>
 </AnchorPane>

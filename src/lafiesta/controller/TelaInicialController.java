@@ -25,7 +25,7 @@ public class TelaInicialController implements Initializable {
 
 
     @FXML
-    private Label nome;
+    private Text nome;
     @FXML
     private AnchorPane menu;
     @FXML
