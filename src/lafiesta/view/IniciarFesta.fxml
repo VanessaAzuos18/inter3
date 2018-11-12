@@ -1,24 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="465.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
+<AnchorPane prefHeight="500.0" prefWidth="650.0" styleClass="achor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
    <children>
-      <Text fill="#ef3e36" layoutX="91.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
+      <Text fill="#ef3e36" layoutX="88.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
          <font>
             <Font name="Glegoo" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="69.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual vai ser o nome da sua festa?" />
-      <TextField layoutX="69.0" layoutY="136.0" prefHeight="25.0" prefWidth="187.0" />
-      <Text layoutX="368.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A data desse evento incrível será em:" />
-      <TextField layoutX="368.0" layoutY="136.0" prefHeight="25.0" prefWidth="208.0" />
-      <Text layoutX="69.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em qual local:" />
-      <TextField layoutX="69.0" layoutY="213.0" prefHeight="25.0" prefWidth="187.0" />
-      <Text layoutX="368.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em qual local:" />
-      <TextField layoutX="368.0" layoutY="213.0" prefHeight="25.0" prefWidth="208.0" />
+      <Text layoutX="42.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Qual vai ser o nome da sua festa?">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="nomeFesta" layoutX="42.0" layoutY="145.0" prefHeight="31.0" prefWidth="251.0" style="-fx-font-family: Gleego;" styleClass="campo-formulario">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Text layoutX="341.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="A data desse evento incrível será em:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="data" layoutX="341.0" layoutY="145.0" prefHeight="31.0" prefWidth="275.0" styleClass="campo-formulario">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Text layoutX="42.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Numero de convidados:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="numeroConvidados" editable="false" layoutX="42.0" layoutY="350.0" prefHeight="31.0" prefWidth="275.0" styleClass="campo-formulario">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Button id="botao-tela-cadastro" layoutX="523.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleCadastrar" prefHeight="31.0" prefWidth="94.0" styleClass="botao-cadastro" text="Cadastrar" textFill="WHITE" />
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="37.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="@../../res/design/icons/arrow.png" />
+         </image>
+      </ImageView>
+      <Text fill="#ef3e36" layoutX="59.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+      <Text layoutX="44.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Localizar local da festa">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #2E282A;" styleClass="botao-preto" text="Localizar" textFill="WHITE" />
+      <TextField fx:id="local" disable="true" layoutX="44.0" layoutY="248.0" prefHeight="31.0" prefWidth="439.0" promptText="Clique no botao ao lado para localizar" styleClass="campo-formulario">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="43.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
+         <font>
+            <Font size="1.0" />
+         </font>
+      </Button>
    </children>
+   <stylesheets>
+      <URL value="@css/ListaConvidados.css" />
+      <URL value="@css/ConfiguracaoFonte.css" />
+   </stylesheets>
 </AnchorPane>

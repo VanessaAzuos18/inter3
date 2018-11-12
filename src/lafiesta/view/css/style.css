@@ -3,6 +3,10 @@
     src: url('../../../res/fonts/Glegoo-Regular.ttf');
 }
 
+.anchorPane {
+    -fx-font-family: Glegoo;
+}
+
 #tela-login {
     -fx-background-image: url("../../../res/design/telas/CadastroConvidado.png");
     /*-fx-background-size: cover;*/
@@ -82,4 +86,5 @@
 
 #tela-cadastro-fornecedor {
 }
+
 

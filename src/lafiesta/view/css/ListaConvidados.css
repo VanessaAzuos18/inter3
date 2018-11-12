@@ -1,0 +1,46 @@
+.achor-pane {
+    -fx-font-family: Glegoo;
+    -fx-background-color: #FFF;
+}
+
+.campo-formulario {
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 0 0;
+}
+
+.text {
+    -fx-font-size: 14px;
+    -fx-font-family: Glegoo;
+}
+
+.campo-formulario {
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-focus-color: transparent; /*Deixa o focus dos campos transparentes*/
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #2E282A transparent;
+}
+
+.botao-cadastro {
+    -fx-background-color: #EF3E36;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 0; /*Remove as bordas arredondadas dos botoes*/
+    -fx-cursor: hand;
+}
+
+.botao-preto {
+    -fx-background-color: #2E282A;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 0; /*Remove as bordas arredondadas dos botoes*/
+    -fx-cursor: hand;
+}
+
+.tabela {
+    -fx-font-family: Glegoo;
+}
+
+.botao-transparente {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-size: 0;
+}
