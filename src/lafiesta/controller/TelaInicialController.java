@@ -3,13 +3,19 @@ package lafiesta.controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lafiesta.model.domain.Usuario;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,6 +30,8 @@ public class TelaInicialController implements Initializable {
     private AnchorPane menu;
     @FXML
     private Button menuBotao;
+    @FXML
+    private Text txtSair;
 
     private Usuario usuario;
 
@@ -43,6 +51,21 @@ public class TelaInicialController implements Initializable {
         this.usuario = usuario;
         nome.setText(usuario.getNome());
         System.out.println(usuario.getTipo());
+    }
+
+    @FXML
+    void aa(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../view/LoginMain.fxml"));
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Login");
+        stage.setScene(scene);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
     }
 
     @Override
