@@ -10,63 +10,141 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="tela-inicial" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/TelaInicial.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.TelaInicialController">
+<AnchorPane id="tela-inicial" fx:id="container" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/TelaInicial.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.TelaInicialController">
    <children>
-      <Button fx:id="botaoMenu" layoutX="599.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleMenu" prefHeight="15.0" prefWidth="21.0" styleClass="botao-menu-superior" stylesheets="@css/style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <AnchorPane fx:id="menu" layoutX="479.0" layoutY="47.0" prefHeight="143.0" prefWidth="141.0" style="-fx-background-color: #f2f2f2;">
+      <AnchorPane fx:id="cliente" prefHeight="590.0" prefWidth="650.0">
          <children>
-            <Text layoutX="33.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minha conta">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Text>
-            <Text layoutX="11.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Text>
-            <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Text>
-            <Text layoutX="8.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
+            <Label id="tipo" fx:id="tipo" layoutX="170.0" layoutY="143.0" text="Label" />
+            <Text fx:id="nome" fill="#ef3e36" layoutX="167.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="botaoMenu" layoutX="601.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleMenu" prefHeight="22.0" prefWidth="21.0" styleClass="botao-menu-superior" stylesheets="@css/style.css">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="menu" layoutX="480.0" layoutY="55.0" prefHeight="143.0" prefWidth="141.0" style="-fx-background-color: #f2f2f2;">
+               <children>
+                  <Text layoutX="33.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minha conta">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="11.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="8.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="13.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="txtSair" layoutX="58.0" layoutY="132.0" onMouseClicked="#aa" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="77.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" />
+            <TableView fx:id="tabela" layoutX="77.0" layoutY="243.0" prefHeight="190.0" prefWidth="496.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="102.0" text="Id" />
+                  <TableColumn fx:id="nome_festa" prefWidth="102.0" text="Nome da Festa" />
+                  <TableColumn fx:id="data" prefWidth="48.0" text="Data" />
+                  <TableColumn fx:id="local" prefWidth="48.0" text="Local" />
+                  <TableColumn fx:id="convidados" prefWidth="88.0" text="Convidados" />
+                  <TableColumn maxWidth="40" minWidth="40" text="" />
+               </columns>
+            </TableView>
+            <Button id="botao-remover" fx:id="botaoCadastro" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="fornecedor" prefHeight="590.0" prefWidth="650.0">
+         <children>
+            <Label id="tipo" fx:id="tipoFornecedor" layoutX="170.0" layoutY="143.0" text="Label" />
+            <Text fx:id="nomeFornecedor" fill="#ef3e36" layoutX="167.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
+               <font>
+                  <Font size="23.0" />
+               </font>
             </Text>
-            <Text layoutX="13.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
+            <Button fx:id="botaoMenuFornecedor" layoutX="601.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleMenuFornecedor" prefHeight="22.0" prefWidth="21.0" styleClass="botao-menu-superior" stylesheets="@css/style.css">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Text>
-            <Text fx:id="txtSair" layoutX="58.0" layoutY="132.0" onMouseClicked="#aa" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Text>
-         </children></AnchorPane>
-      <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="600.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="tabela" layoutX="78.0" layoutY="246.0" prefHeight="190.0" prefWidth="496.0">
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-        <columns>
-           <TableColumn fx:id="id" prefWidth="102.0" text="Id" />
-           <TableColumn fx:id="nome_festa" prefWidth="102.0" text="Nome da Festa" />
-          <TableColumn fx:id="data" prefWidth="48.0" text="Data" />
-            <TableColumn fx:id="local" prefWidth="48.0" text="Local" />
-            <TableColumn fx:id="convidados" prefWidth="88.0" text="Convidados" />
-           <TableColumn maxWidth="40" minWidth="40" text="" />
-        </columns>
-      </TableView>
-      <Label id="tipo" fx:id="tipo" layoutX="164.0" layoutY="136.0" text="Label" />
-      <Text fx:id="nome" fill="#ef3e36" layoutX="161.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Text>
-      <Button id="botao-remover" fx:id="botaoCadastro" layoutX="464.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="menuFornecedor" layoutX="480.0" layoutY="55.0" prefHeight="143.0" prefWidth="141.0" style="-fx-background-color: #f2f2f2;">
+               <children>
+                  <Text layoutX="33.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minha conta">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="11.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="8.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text layoutX="13.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+                  <Text fx:id="txtSairFornecedor" layoutX="58.0" layoutY="132.0" onMouseClicked="#aa" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="77.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" />
+            <TableView fx:id="tabelaFornecedor" layoutX="77.0" layoutY="243.0" prefHeight="190.0" prefWidth="496.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="idFornecedor" prefWidth="102.0" text="Id" />
+                  <TableColumn fx:id="nome_festaFornecedor" prefWidth="102.0" text="Nome da Festa" />
+                  <TableColumn fx:id="dataFornecedor" prefWidth="48.0" text="Data" />
+                  <TableColumn fx:id="localFornecedor" prefWidth="48.0" text="Local" />
+                  <TableColumn fx:id="convidadosFornecedor" prefWidth="88.0" text="Convidados" />
+                  <TableColumn maxWidth="40" minWidth="40" text="" />
+               </columns>
+            </TableView>
+            <Button id="botao-remover" fx:id="botaoCadastroFornecedor" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

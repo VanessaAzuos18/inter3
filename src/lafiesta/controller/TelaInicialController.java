@@ -28,6 +28,9 @@ public class TelaInicialController implements Initializable {
     private String nomeUsuario;
 
     @FXML
+    private AnchorPane container;
+
+    @FXML
     private Text nome;
     @FXML
     private Label tipo;
@@ -49,6 +52,29 @@ public class TelaInicialController implements Initializable {
     private TableColumn<Festa, String> data;
     @FXML
     private TableColumn<Festa, Integer> convidados;
+    @FXML
+    private AnchorPane cliente;
+    @FXML
+    private AnchorPane fornecedor;
+
+    @FXML
+    private Text nomeFornecedor;
+    @FXML
+    private Label tipoFornecedor;
+    @FXML
+    private AnchorPane menuFornecedor;
+    @FXML
+    private TableView<Festa> tabelaFornecedor;
+    @FXML
+    private TableColumn<Festa, Integer> idFornecedor;
+    @FXML
+    private TableColumn<Festa, String> nome_festaFornecedor;
+    @FXML
+    private TableColumn<Festa, String> dataFornecedor;
+    @FXML
+    private TableColumn<Festa, String> localFornecedor;
+    @FXML
+    private TableColumn<Festa, Integer> convidadosFornecedor;
 
     private Usuario usuario;
 
@@ -66,25 +92,22 @@ public class TelaInicialController implements Initializable {
         }
     }
 
+    public void handleMenuFornecedor(ActionEvent e) {
+        if(menuFornecedor.isVisible() == false) {
+            menuFornecedor.setVisible(true);
+        } else {
+            menuFornecedor.setVisible(false);
+        }
+    }
+
     public void setUsuario(Usuario usuario) {
 
         this.usuario = usuario;
-        nome.setText(usuario.getNome());
-        if(usuario.getTipo() == 1) tipo.setText("Cliente");
-        else tipo.setText("Fornecedor / Prestador");
-
-        id.setCellValueFactory(
-                new PropertyValueFactory<>("id"));
-        nome_festa.setCellValueFactory(
-                new PropertyValueFactory<>("nome_festa"));
-        data.setCellValueFactory(
-                new PropertyValueFactory<>("Data"));
-        local.setCellValueFactory(
-                new PropertyValueFactory<>("Local"));
-        convidados.setCellValueFactory(
-                new PropertyValueFactory<>("Convidados"));
-
-        tabela.setItems(festaDAO.carregaFestas(usuario.getId()));
+        if(usuario.getTipo() == 1) {
+            montaTelaCliente();
+        } else {
+            montaTelaFornecedor();
+        }
     }
 
     @FXML
@@ -105,14 +128,14 @@ public class TelaInicialController implements Initializable {
             stage.setResizable(false);
             stage.show();
 
-            txtSair.getScene().getWindow().hide();
+            container.getScene().getWindow().hide();
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         menu.setVisible(false);
-
+        menuFornecedor.setVisible(false);
     }
 
     public void remover(ActionEvent e) {
@@ -143,5 +166,45 @@ public class TelaInicialController implements Initializable {
         stage.show();
 
         txtSair.getScene().getWindow().hide();
+    }
+
+    private void montaTelaCliente() {
+        cliente.setVisible(true);
+        fornecedor.setVisible(false);
+        tipo.setText("Cliente");
+        nome.setText(usuario.getNome());
+
+        id.setCellValueFactory(
+                new PropertyValueFactory<>("id"));
+        nome_festa.setCellValueFactory(
+                new PropertyValueFactory<>("nome_festa"));
+        data.setCellValueFactory(
+                new PropertyValueFactory<>("Data"));
+        local.setCellValueFactory(
+                new PropertyValueFactory<>("Local"));
+        convidados.setCellValueFactory(
+                new PropertyValueFactory<>("Convidados"));
+
+        tabela.setItems(festaDAO.carregaFestas(usuario.getId()));
+    }
+
+    private void montaTelaFornecedor() {
+        cliente.setVisible(false);
+        fornecedor.setVisible(true);
+        tipoFornecedor.setText("Fornecedor / Prestador");
+        nomeFornecedor.setText(usuario.getNome());
+
+        idFornecedor.setCellValueFactory(
+                new PropertyValueFactory<>("id"));
+        nome_festaFornecedor.setCellValueFactory(
+                new PropertyValueFactory<>("nome_festa"));
+        dataFornecedor.setCellValueFactory(
+                new PropertyValueFactory<>("Data"));
+        localFornecedor.setCellValueFactory(
+                new PropertyValueFactory<>("Local"));
+        convidadosFornecedor.setCellValueFactory(
+                new PropertyValueFactory<>("Convidados"));
+
+        tabelaFornecedor.setItems(festaDAO.carregaFestas(usuario.getId()));
     }
 }
