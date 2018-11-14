@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="590.0" prefWidth="650.0" style="-fx-background-color: #fff;" styleClass="anchor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.ListaConvidadosController">
    <children>
-      <Text fill="#ef3e36" layoutX="164.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre aqui seus convidados!">
+      <Text fill="#ef3e36" layoutX="175.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre aqui seus convidados!">
          <font>
             <Font name="Glegoo" size="20.0" />
          </font>
@@ -33,30 +33,30 @@
          <font>
             <Font name="Glegoo" size="12.0" />
          </font></TextField>
-      <Text layoutX="58.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Qual a sua idade:" />
-      <TextField fx:id="idade" layoutX="58.0" layoutY="264.0" styleClass="campo-formulario" />
-      <Text layoutX="336.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Qual o sexo?" />
+      <Text layoutX="58.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Qual a  idade do convidado:" />
+      <TextField fx:id="idade" layoutX="58.0" layoutY="264.0" prefHeight="21.0" prefWidth="203.0" styleClass="campo-formulario" />
+      <Text layoutX="336.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Qual o sexo:" />
       <ComboBox fx:id="sexo" layoutX="338.0" layoutY="247.0" prefWidth="150.0" styleClass="campo-formulario" />
-      <TableView fx:id="tabela" layoutX="60.0" layoutY="352.0" prefHeight="106.0" prefWidth="551.0" styleClass="tabela">
+      <TableView fx:id="tabela" layoutX="60.0" layoutY="330.0" prefHeight="185.0" prefWidth="551.0" styleClass="tabela">
         <columns>
-          <TableColumn prefWidth="171.33331680297852" text="Nome" />
-          <TableColumn prefWidth="191.33335876464844" text="Idade" />
-            <TableColumn prefWidth="189.33334350585938" text="Sexo" />
+          <TableColumn fx:id="colunaNome" prefWidth="171.33331680297852" text="Nome" />
+          <TableColumn fx:id="colunaIdade" prefWidth="191.33335876464844" text="Idade" />
+            <TableColumn fx:id="colunaSexo" prefWidth="189.33334350585938" text="Sexo" />
         </columns>
       </TableView>
       <Button layoutX="519.0" layoutY="250.0" mnemonicParsing="false" onAction="#handleAdicionar" prefHeight="28.0" prefWidth="88.0" styleClass="botao-cadastro" text="Adicionar" />
-      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="58.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="58.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../res/design/icons/arrow.png" />
          </image>
       </ImageView>
-      <Text fill="#ef3e36" layoutX="80.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
-      <Text fill="#ef3e36" layoutX="130.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Você pode adicioná-los ou removê-los">
+      <Text fill="#ef3e36" layoutX="80.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+      <Text fill="#ef3e36" layoutX="143.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Você pode adicioná-los ou removê-los">
          <font>
             <Font name="Glegoo" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="60.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="63.0" styleClass="botao-transparente">
+      <Button layoutX="60.0" layoutY="533.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="63.0" styleClass="botao-transparente">
          <font>
             <Font size="1.0" />
          </font>

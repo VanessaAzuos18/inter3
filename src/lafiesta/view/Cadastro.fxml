@@ -13,7 +13,7 @@
 
 <AnchorPane id="tela-cadastro" prefHeight="590.0" prefWidth="650.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.CadastroController">
    <children>
-      <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroCliente" prefHeight="590.0" prefWidth="650.0">
+      <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroCliente" prefHeight="590.0" prefWidth="650.0" style="-fx-background-color: #fff;">
          <children>
             <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" onAction="#cadastro" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
             <ImageView fitHeight="211.0" fitWidth="269.0" layoutX="216.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -85,9 +85,10 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Button id="botao-tela-cadastro" layoutX="34.0" layoutY="524.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: transparent;" styleClass="botao-menu-superior" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroFornecedor" prefHeight="590.0" prefWidth="650.0">
+      <AnchorPane id="tela-cadastro-cliente" fx:id="telaCadastroFornecedor" prefHeight="590.0" prefWidth="650.0" style="-fx-background-color: #fff;">
          <children>
             <TextField fx:id="endereco_fornec" layoutX="41.0" layoutY="307.0" prefHeight="24.0" prefWidth="582.0" styleClass="campo-formulario">
                <padding>
@@ -126,7 +127,7 @@
             <Text layoutX="353.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ:" />
             <TextField fx:id="cnpj_fornec" layoutX="353.0" layoutY="355.0" prefHeight="24.0" prefWidth="270.0" styleClass="campo-formulario">
                <padding>
-                  <Insets left="28.0" />
+                  <Insets left="35.0" />
                </padding>
             </TextField>
             <Text layoutX="42.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" />
@@ -160,6 +161,7 @@
                </cursor>
             </Button>
             <Button id="botao-tela-cadastro" layoutX="530.0" layoutY="525.0" mnemonicParsing="false" onAction="#cadastroCnpj" prefHeight="31.0" prefWidth="94.0" styleClass="botao" text="Cadastrar" textFill="WHITE" />
+            <Button id="botao-tela-cadastro" layoutX="34.0" layoutY="524.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: transparent;" styleClass="botao-menu-superior" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

@@ -23,7 +23,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Text>
-            <Text layoutX="11.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
+            <Text layoutX="11.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Text>

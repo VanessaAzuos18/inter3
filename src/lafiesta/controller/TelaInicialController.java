@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -18,10 +15,12 @@ import javafx.stage.Stage;
 import lafiesta.model.dao.FestaDAO;
 import lafiesta.model.domain.Festa;
 import lafiesta.model.domain.Usuario;
+import sun.plugin.javascript.navig.Anchor;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class TelaInicialController implements Initializable {
@@ -90,22 +89,30 @@ public class TelaInicialController implements Initializable {
 
     @FXML
     void aa(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../view/LoginMain.fxml"));
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Aviso de confirmação");
+        alert.setHeaderText("Você realmente deseja sair do sistema?");
+        Optional<ButtonType> result = alert.showAndWait();
 
-        Stage stage = new Stage();
-        Scene scene = new Scene(root);
+        if(result.get() == ButtonType.OK) {
+            Parent root = FXMLLoader.load(getClass().getResource("../view/LoginMain.fxml"));
 
-        stage.setTitle("Login");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
 
-        txtSair.getScene().getWindow().hide();
+            stage.setTitle("Login");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+
+            txtSair.getScene().getWindow().hide();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         menu.setVisible(false);
+
     }
 
     public void remover(ActionEvent e) {
@@ -114,5 +121,27 @@ public class TelaInicialController implements Initializable {
             tabela.setItems(festaDAO.carregaFestas(usuario.getId()));
         else
             JOptionPane.showMessageDialog(null, "Erro ao remover a festa!");
+    }
+
+    @FXML
+    void handleListaConvidado(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("../view/ListaConvidados.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Lista de convidados");
+        stage.setScene(scene);
+
+        ListaConvidadosController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
     }
 }

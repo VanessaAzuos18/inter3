@@ -63,6 +63,21 @@ public class CadastroController implements Initializable {
 
     UsuarioDAO usuarioDAO = new UsuarioDAO();
 
+    public void handleVoltar(ActionEvent e) throws IOException{
+        Parent root;
+
+        root = FXMLLoader.load(getClass().getResource("../view/LoginMain.fxml"));
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.show();
+
+        telaCadastroFornecedor.getScene().getWindow().hide();
+    }
+
     public void handleExibeTelaCadastroFornecedor(ActionEvent event) throws IOException {
         telaCadastroCliente.setVisible(false);
         telaCadastroFornecedor.setVisible(true);
