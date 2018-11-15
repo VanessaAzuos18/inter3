@@ -69,9 +69,6 @@ public class ListaConvidadosController implements Initializable {
                 ConvidadoDAO convidadoDAO = new ConvidadoDAO();
                 if(convidadoDAO.cadastrarConvidado(convidado)) {
                     tabela.setItems(convidadoDAO.carregarConvidados(usuario.getId()));
-                    System.out.println("HOMEM: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[0]);
-                    System.out.println("MULHER: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[1]);
-                    System.out.println("CRIANCA: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[2]);
                 } else {
                     System.out.println("Falha ao cadastrar o convidado");
                 }
@@ -114,10 +111,6 @@ public class ListaConvidadosController implements Initializable {
 
         ConvidadoDAO convidadoDAO = new ConvidadoDAO();
         tabela.setItems(convidadoDAO.carregarConvidados(usuario.getId()));
-
-        System.out.println("HOMEM: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[0]);
-        System.out.println("MULHER: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[1]);
-        System.out.println("CRIANCA: " + convidadoDAO.contarPessoasGrupo(usuario.getId())[2]);
     }
 
     @Override

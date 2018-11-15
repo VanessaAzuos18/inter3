@@ -65,12 +65,10 @@ public class ConvidadoDAO {
             totalPessoasGrupo[0] = stmt.getInt(2);
             totalPessoasGrupo[1] = stmt.getInt(3);
             totalPessoasGrupo[2] = stmt.getInt(4);
-            System.out.println("ENTROU");
 
             return totalPessoasGrupo;
         } catch(SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("NAO ENTROU");
             return null;
         }
     }
