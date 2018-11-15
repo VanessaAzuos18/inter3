@@ -52,4 +52,26 @@ public class ConvidadoDAO {
             return null;
         }
     }
+
+    public int[] contarPessoasGrupo(int idUsuario) {
+        int[] totalPessoasGrupo = new int[3];
+        try {
+            CallableStatement stmt = connection.prepareCall("{call contarPessoasGrupo(?, ?, ?, ?)}");
+            stmt.setInt(1,idUsuario);
+            stmt.registerOutParameter(2, Types.INTEGER);
+            stmt.registerOutParameter(3, Types.INTEGER);
+            stmt.registerOutParameter(4, Types.INTEGER);
+            stmt.execute();
+            totalPessoasGrupo[0] = stmt.getInt(2);
+            totalPessoasGrupo[1] = stmt.getInt(3);
+            totalPessoasGrupo[2] = stmt.getInt(4);
+            System.out.println("ENTROU");
+
+            return totalPessoasGrupo;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("NAO ENTROU");
+            return null;
+        }
+    }
 }
