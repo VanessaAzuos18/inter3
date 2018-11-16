@@ -1,15 +1,11 @@
 package lafiesta.model.dao;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArrayBase;
 import javafx.collections.ObservableList;
 import lafiesta.model.database.BDFabricaConexao;
 import lafiesta.model.domain.Convidado;
-import lafiesta.model.domain.Festa;
-import lafiesta.model.domain.Usuario;
 
 import java.sql.*;
-import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,7 +13,7 @@ public class ConvidadoDAO {
     private Connection connection;
 
     public ConvidadoDAO() {
-        connection  = BDFabricaConexao.getConnection();
+        connection = BDFabricaConexao.getConnection();
     }
 
     public boolean cadastrarConvidado(Convidado convidado) {
@@ -29,8 +25,8 @@ public class ConvidadoDAO {
             stmt.setInt(4, convidado.getIdUsuario());
             stmt.execute();
             return true;
-        } catch(SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
@@ -42,15 +38,31 @@ public class ConvidadoDAO {
             String sql = "SELECT * FROM convidado where id_usuario = " + id + " order by id;";
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rset = stmt.executeQuery();
-            while(rset.next()){
-                convidados.add( new Convidado(rset.getString("nome"), rset.getInt("idade"),
+            while (rset.next()) {
+                convidados.add(new Convidado(rset.getString("nome"), rset.getInt("idade"),
                         rset.getString("sexo")));
             }
             return convidados;
-        } catch(SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
+    }
+
+    public String carregarTotalConvidados(int id) {
+        try {
+            String sql = "SELECT count(*) as total FROM convidado where id_usuario = " + id + " order by id;";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                String total = String.valueOf(rset.getInt("total"));
+                return total;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return "0";
+        }
+        return "0";
     }
 
     public int[] contarPessoasGrupo(int idUsuario) {
@@ -68,7 +80,7 @@ public class ConvidadoDAO {
 
             return totalPessoasGrupo;
         } catch(SQLException ex) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }

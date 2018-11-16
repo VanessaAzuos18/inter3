@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="650.0" styleClass="achor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
+<AnchorPane prefHeight="590.0" prefWidth="650.0" styleClass="achor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.IniciarFestaController">
    <children>
       <Text fill="#ef3e36" layoutX="88.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chegou a hora de começar a preparar sua festa!">
          <font>
@@ -39,31 +39,31 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Text layoutX="42.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Numero de convidados:">
+      <Text layoutX="42.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Numero de convidados:">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <TextField fx:id="numeroConvidados" editable="false" layoutX="42.0" layoutY="350.0" prefHeight="31.0" prefWidth="275.0" styleClass="campo-formulario">
+      <TextField fx:id="numeroConvidados" disable="true" editable="false" layoutX="42.0" layoutY="264.0" prefHeight="31.0" prefWidth="275.0" styleClass="campo-formulario">
          <padding>
             <Insets top="10.0" />
          </padding>
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button id="botao-tela-cadastro" layoutX="523.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleCadastrar" prefHeight="31.0" prefWidth="94.0" styleClass="botao-cadastro" text="Cadastrar" textFill="WHITE" />
-      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="37.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleCadastrar" prefHeight="31.0" prefWidth="94.0" styleClass="botao-cadastro" text="Próximo" textFill="WHITE" />
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="33.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../res/design/icons/arrow.png" />
          </image>
       </ImageView>
-      <Text fill="#ef3e36" layoutX="59.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
-      <Text layoutX="44.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Localizar local da festa">
+      <Text fill="#ef3e36" layoutX="53.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+      <Text layoutX="38.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Localizar local da festa">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #2E282A;" styleClass="botao-preto" text="Localizar" textFill="WHITE" />
-      <TextField fx:id="local" disable="true" layoutX="44.0" layoutY="248.0" prefHeight="31.0" prefWidth="439.0" promptText="Clique no botao ao lado para localizar" styleClass="campo-formulario">
+      <Button id="botao-tela-cadastro" layoutX="518.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #2E282A;" styleClass="botao-preto" text="Localizar" textFill="WHITE" />
+      <TextField fx:id="local" disable="true" layoutX="38.0" layoutY="378.0" prefHeight="31.0" prefWidth="439.0" promptText="Clique no botao ao lado para localizar" styleClass="campo-formulario">
          <padding>
             <Insets top="10.0" />
          </padding>
@@ -71,7 +71,12 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="43.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
+      <Button fx:id="butt" layoutX="38.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
+         <font>
+            <Font size="1.0" />
+         </font>
+      </Button>
+      <Button fx:id="voltara" layoutX="38.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
          <font>
             <Font size="1.0" />
          </font>

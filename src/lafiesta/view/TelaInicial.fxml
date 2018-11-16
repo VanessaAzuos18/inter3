@@ -40,7 +40,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
+                  <Text layoutX="25.0" layoutY="42.0" onMouseClicked="#handleIniciarFesta" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

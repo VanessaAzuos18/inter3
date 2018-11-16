@@ -168,6 +168,28 @@ public class TelaInicialController implements Initializable {
         txtSair.getScene().getWindow().hide();
     }
 
+    @FXML
+    void handleIniciarFesta(MouseEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("../view/IniciarFesta.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Iniciar Festa");
+        stage.setScene(scene);
+
+        IniciarFestaController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
+    }
+
     private void montaTelaCliente() {
         cliente.setVisible(true);
         fornecedor.setVisible(false);

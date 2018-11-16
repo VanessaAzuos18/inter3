@@ -54,4 +54,21 @@ public class FestaDAO {
             return false;
         }
     }
+
+    public boolean adicionar(Festa festa, int idUsuario){
+        try {
+            String sql = null;
+
+            sql = "insert into festa (local, id_usuario, convidados, data, nome_festa) values (\"" + festa.getLocal() + "\", " +
+            idUsuario + ", " + festa.getConvidados() + ", \"" + festa.getData() + "\", \"" + festa.getNome_festa() + "\")";
+
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.executeUpdate();
+
+            return true;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }
