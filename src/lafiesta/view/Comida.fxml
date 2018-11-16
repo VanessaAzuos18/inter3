@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="590.0" prefWidth="650.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.ComidaController">
    <children>
       <Text fill="#ef3e36" layoutX="281.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comidas">
@@ -34,7 +33,7 @@
             <Font name="Glegoo" size="14.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cbTipoComida" layoutX="43.0" layoutY="165.0" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
+      <ComboBox fx:id="cbTipoComida" layoutX="43.0" layoutY="165.0" onAction="#handleTipoComida" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
       <ComboBox fx:id="cbServido" layoutX="418.0" layoutY="165.0" prefHeight="37.0" prefWidth="191.0" styleClass="campo-formulario" />
       <Text layoutX="43.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão as opções compatíveis com a sua escolha">
          <font>
@@ -43,8 +42,9 @@
       </Text>
       <TableView fx:id="tabela" layoutX="43.0" layoutY="283.0" prefHeight="200.0" prefWidth="566.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="colunaGrupoComida" prefWidth="175.33334732055664" text="TIPO" />
+          <TableColumn fx:id="colunaTipoComida" prefWidth="191.3332977294922" text="COMIDA" />
+            <TableColumn fx:id="colunaQuantidade" prefWidth="199.33340454101562" text="QUANTIDADE" />
         </columns>
       </TableView>
       <Text layoutX="43.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caso você não precise desse cálculo, siga adiante!">
@@ -64,6 +64,7 @@
             <Font size="1.0" />
          </font>
       </Button>
+      <Button layoutX="509.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleAdicionar" prefHeight="34.0" prefWidth="100.0" styleClass="botao-preto" text="Adicionar" />
    </children>
    <stylesheets>
       <URL value="@css/ConfiguracaoFonte.css" />

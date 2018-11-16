@@ -71,4 +71,20 @@ public class FestaDAO {
             return false;
         }
     }
+
+    public int buscarId(int id) {
+        int idFesta=0;
+        try {
+            String sql = "SELECT * FROM festa WHERE id_usuario = " + id + " ORDER BY id DESC LIMIT 1;";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            if(rset.next()) {
+                idFesta =  rset.getInt(1);
+            }
+            return idFesta;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
 }
