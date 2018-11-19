@@ -33,7 +33,7 @@
             <Font name="Glegoo" size="14.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cbTipoBebida" layoutX="42.0" layoutY="166.0" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
+      <ComboBox fx:id="cbTipoBebida" layoutX="42.0" layoutY="166.0" onAction="#handleTipoComida" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
       <ComboBox fx:id="cbServido" layoutX="417.0" layoutY="166.0" prefHeight="37.0" prefWidth="191.0" styleClass="campo-formulario" />
       <Text layoutX="42.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão as opções compatíveis com a sua escolha">
          <font>
@@ -42,8 +42,9 @@
       </Text>
       <TableView fx:id="tabela" layoutX="42.0" layoutY="284.0" prefHeight="200.0" prefWidth="566.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colunaGrupoBebida" prefWidth="178.66672134399414" text="C1" />
+            <TableColumn fx:id="colunaTipoBebida" prefWidth="199.9999237060547" text="C2" />
+            <TableColumn fx:id="colunaQuantidade" prefWidth="188.00009155273438" text="Column X" />
          </columns>
       </TableView>
       <Text layoutX="42.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caso você não precise desse cálculo, siga adiante!">
@@ -63,6 +64,7 @@
             <Font size="1.0" />
          </font>
       </Button>
+      <Button layoutX="508.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleAdicionar" prefHeight="34.0" prefWidth="100.0" styleClass="botao-preto" text="Adicionar" />
    </children>
    <stylesheets>
       <URL value="@css/ConfiguracaoFonte.css" />
