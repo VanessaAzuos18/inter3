@@ -37,8 +37,8 @@
             <Font name="Glegoo" size="14.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cbTipoUtensilio" layoutX="42.0" layoutY="166.0" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
-      <ComboBox fx:id="cbCapacidade" layoutX="417.0" layoutY="166.0" prefHeight="37.0" prefWidth="191.0" styleClass="campo-formulario" />
+      <ComboBox fx:id="cbGrupoUtensilio" layoutX="42.0" layoutY="166.0" onAction="#handleTipoUtensilio" prefHeight="34.0" prefWidth="320.0" styleClass="campo-formulario" />
+      <ComboBox fx:id="cbTipoUtensilio" layoutX="417.0" layoutY="166.0" prefHeight="37.0" prefWidth="191.0" styleClass="campo-formulario" />
       <Text layoutX="42.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão as opções compatíveis com a sua escolha">
          <font>
             <Font name="Glegoo" size="14.0" />
@@ -46,8 +46,9 @@
       </Text>
       <TableView fx:id="tabela" layoutX="42.0" layoutY="284.0" prefHeight="200.0" prefWidth="566.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="C1" />
-            <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="colunaGrupoUtensilio" prefWidth="187.3332862854004" text="C1" />
+            <TableColumn fx:id="colunaTipoUtensilio" prefWidth="199.33335876464844" text="C2" />
+            <TableColumn fx:id="colunaQuantidadeUtensilio" prefWidth="182.66665649414062" text="Column X" />
          </columns>
       </TableView>
       <Text layoutX="42.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caso você não precise desse cálculo, siga adiante!">
@@ -67,5 +68,6 @@
             <Font size="1.0" />
          </font>
       </Button>
+      <Button layoutX="508.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleAdicionar" prefHeight="34.0" prefWidth="100.0" styleClass="botao-preto" text="Adicionar" />
    </children>
 </AnchorPane>
