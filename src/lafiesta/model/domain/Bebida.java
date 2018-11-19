@@ -20,7 +20,7 @@ public class Bebida {
         this.quantidade = quantidade;
     }
 
-    public boolean calcularBebida(String grupoBebida, int tipoComidaIndex, int idUsuario, String tipoComidaValue) {
+    public boolean calcularBebida(String grupoBebida, int tipoBebidaIndex, int idUsuario, String tipoBebidaValue) {
         double total = 0;
         String grandeza = null;
 
@@ -30,12 +30,12 @@ public class Bebida {
         FestaDAO festaDAO = new FestaDAO();
         int idFesta = festaDAO.buscarId(idUsuario);
 
-        int verifica = bebidaDAO.verificarBebida(idUsuario, idFesta, tipoComidaValue);
+        int verifica = bebidaDAO.verificarBebida(idUsuario, idFesta, tipoBebidaValue);
 
-        if (grupoBebida.equals("ALCOOLICAS") && tipoComidaIndex == 0) {
+        if (grupoBebida.equals("ALCOOLICAS") && tipoBebidaIndex == 0) {
             total = convidadoDAO.contarPessoasGrupo(idUsuario)[0] * 1000;
             grandeza = "ml";
-        } else if (grupoBebida.equals("ALCOOLICAS") && (tipoComidaIndex == 1 || tipoComidaIndex == 2)) {
+        } else if (grupoBebida.equals("ALCOOLICAS") && (tipoBebidaIndex == 1 || tipoBebidaIndex == 2)) {
             total = Double.parseDouble(convidadoDAO.carregarTotalConvidados(idUsuario)) / 20.0;
             total *= 1000;
             grandeza = "ml";
@@ -52,18 +52,18 @@ public class Bebida {
             grandeza = "ml";
         }
 
-        if(grupoBebida == "AGUAS" && tipoComidaIndex == 0) {
+        if(grupoBebida == "AGUAS" && tipoBebidaIndex == 0) {
             total = Double.parseDouble(convidadoDAO.carregarTotalConvidados(idUsuario)) * 100;
             grandeza = "ml";
-        } else if (grupoBebida.equals("AGUAS") && tipoComidaIndex == 1) {
+        } else if (grupoBebida.equals("AGUAS") && tipoBebidaIndex == 1) {
             total = Double.parseDouble(convidadoDAO.carregarTotalConvidados(idUsuario)) * 300;
             grandeza = "ml";
         }
 
-        if (grupoBebida.equals("COFFEE BREAK") && (tipoComidaIndex == 0 || tipoComidaIndex == 2)) {
+        if (grupoBebida.equals("COFFEE BREAK") && (tipoBebidaIndex == 0 || tipoBebidaIndex == 2)) {
             total = convidadoDAO.contarPessoasGrupo(idUsuario)[2] * 200;
             grandeza = "ml";
-        } else if (grupoBebida.equals("COFFEE BREAK") && (tipoComidaIndex == 1 || tipoComidaIndex == 3)) {
+        } else if (grupoBebida.equals("COFFEE BREAK") && (tipoBebidaIndex == 1 || tipoBebidaIndex == 3)) {
             total = convidadoDAO.contarPessoasGrupo(idUsuario)[2] * 100;
             grandeza = "ml";
         }
@@ -72,7 +72,7 @@ public class Bebida {
 
         if (verifica == 0) {
             Bebida bebida = new Bebida();
-            bebida.setTipo(tipoComidaValue);
+            bebida.setTipo(tipoBebidaValue);
             bebida.setGrupo(grupoBebida);
             bebida.setIdFesta(idFesta);
             bebida.setQuantidade(total + grandeza);
