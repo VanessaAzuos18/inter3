@@ -66,7 +66,7 @@ public class ComidaDAO {
             while(rset.next()) {
                 quantidadeCarne = rset.getInt(1);
             }
-            System.out.println(quantidadeCarne);
+
             return quantidadeCarne;
         } catch (SQLException ex) {
             Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -78,7 +78,7 @@ public class ComidaDAO {
         FestaDAO festaDAO = new FestaDAO();
 
         try {
-            String sql = "UPDATE comida SET quantidade = " + quantidade + " WHERE id_festa = " + festaDAO.buscarId(id) + " AND (grupo = 'CHURRASCO' AND (tipo LIKE '%CARNE%' OR tipo LIKE '%LINGUI%'));";
+            String sql = "UPDATE comida SET quantidade = '" +  quantidade + "' WHERE id_festa = " + festaDAO.buscarId(id) + " AND (grupo = 'CHURRASCO' AND (tipo LIKE '%CARNE%' OR tipo LIKE '%LINGUI%'));";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.execute();
             return true;
@@ -133,6 +133,53 @@ public class ComidaDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
             return 0;
+        }
+    }
+
+    public int obterTotalComida(int idUsuario) {
+        FestaDAO festaDAO = new FestaDAO();
+        int quantidadeComida = 0;
+
+        try {
+            String sql = "SELECT COUNT(*) FROM comida WHERE id_festa = " + festaDAO.buscarId(idUsuario) + ";";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while(rset.next()) {
+                quantidadeComida = rset.getInt(1);
+            }
+
+            return quantidadeComida;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
+    public boolean atualizarQuantidadePastel(String quantidade, int idUsuario) {
+        FestaDAO festaDAO = new FestaDAO();
+
+        try {
+            String sql = "UPDATE comida SET quantidade = " + quantidade + " where id_festa = " + festaDAO.buscarId(idUsuario) + "  and (grupo = 'FINGER FOODS' and tipo like '%PASTEL%');";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean atualizarQuantidadeSalgado(String quantidade, int idUsuario) {
+        FestaDAO festaDAO = new FestaDAO();
+
+        try {
+            String sql = "UPDATE comida SET quantidade = " + quantidade + " where id_festa = " + festaDAO.buscarId(idUsuario) + " and (grupo = 'FINGER FOODS' and tipo not like '%PASTEL%');";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
     }
 }

@@ -60,57 +60,15 @@ public class ComidaController implements Initializable {
     }
 
     private void calcularComida(ComboBox grupoComida, ComboBox tipoComida) {
-        double total = 0;
-        String grandeza = null;
+        Comida comida = new Comida();
 
-        ComidaDAO comidaDAO = new ComidaDAO();
-        ConvidadoDAO convidadoDAO = new ConvidadoDAO();
+        boolean flag = comida.calcularComida(grupoComida.getValue().toString(), tipoComida.getSelectionModel().getSelectedIndex(), 2, tipoComida.getValue().toString());
 
-        Usuario usuario = new Usuario();
-        usuario.setId(2);
-
-        int verifica = comidaDAO.verificarComida(usuario.getId(), tipoComida.getValue().toString());
-        if(grupoComida.getValue().toString().equals("CHURRASCO") && (tipoComida.getSelectionModel().getSelectedIndex() >= 0 && tipoComida.getSelectionModel().getSelectedIndex() <= 4)) {
-            //Calculo CARNES HOMENS
-            double quantidade = comidaDAO.buscarQuantidadeCarne(usuario.getId()) + 1;
-            quantidade = 600 / quantidade;
-            quantidade *= convidadoDAO.contarPessoasGrupo(usuario.getId())[0];
-            total = quantidade;
-
-            //Calculo CARNES MULHERES
-            quantidade = comidaDAO.buscarQuantidadeCarne(usuario.getId()) + 1;
-            quantidade = 400 / quantidade;
-            quantidade *= convidadoDAO.contarPessoasGrupo(usuario.getId())[1];
-            total += quantidade;
-
-            //Calculo CARNES CRIANÇAS
-            quantidade = comidaDAO.buscarQuantidadeCarne(usuario.getId()) + 1;
-            quantidade = 200 / quantidade;
-            quantidade *= convidadoDAO.contarPessoasGrupo(usuario.getId())[2];
-            total += quantidade;
-
-            comidaDAO.atualizarQuantiadeCarne(String.valueOf(total), usuario.getId());
-            grandeza = "g";
+        if(flag) {
+            ComidaDAO comidaDAO = new ComidaDAO();
+            tabela.setItems(comidaDAO.obterComida(2));
         }
 
-        total = Math.ceil(total);
-        if (verifica == 0)
-        {
-            FestaDAO festaDAO = new FestaDAO();
-            Comida comida = new Comida();
-            comida.setTipo(cbServido.getValue().toString());
-            comida.setGrupo(cbTipoComida.getValue().toString());
-            comida.setIdFesta(festaDAO.buscarId(usuario.getId()));
-            comida.setQuantidade(total + grandeza);
-
-            boolean sucesso = comidaDAO.cadastrarComida(usuario.getId(), comida);
-            if (sucesso) {
-                tabela.setItems(comidaDAO.obterComida(usuario.getId()));
-                System.out.println("CADASTRADO");
-            } else {
-                System.out.println("Convidado não foi cadastrado!");
-            }
-        }
     }
 
     @Override
