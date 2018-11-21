@@ -128,7 +128,6 @@ public class ComidaDAO {
             while(rset.next()) {
                 idComida = rset.getInt("id");
             }
-
             return idComida;
         } catch (SQLException ex) {
             Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);

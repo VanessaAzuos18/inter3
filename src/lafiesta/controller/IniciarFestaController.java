@@ -44,12 +44,29 @@ public class IniciarFestaController implements Initializable {
 
     }
 
-    public void handleCadastrar(ActionEvent e) {
+    public void handleCadastrar(ActionEvent e) throws IOException {
         Festa festa = new Festa(0, nomeFesta.getText(), data.getText(), local.getText(), Integer.parseInt(numeroConvidados.getText()));
 
-        if(festaDAO.adicionar(festa, usuario.getId()))
-            //COLOCAR AQUI O CÓDIGO PARA A PROXIMA TELA
-            JOptionPane.showMessageDialog(null, "Festa cadastrada com sucesso!");
+        if(festaDAO.adicionar(festa, usuario.getId())){
+            FXMLLoader loader = new FXMLLoader();
+
+            loader.setLocation(getClass().getResource("../view/Comida.fxml"));
+
+            AnchorPane anchorPane = (AnchorPane) loader.load();
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(anchorPane);
+
+            stage.setTitle("Cadastrar Comida");
+            stage.setScene(scene);
+
+            ComidaController controller = loader.getController();
+            controller.setUsuario(usuario);
+
+            stage.show();
+
+            voltara.getScene().getWindow().hide();
+        }
         else JOptionPane.showMessageDialog(null, "Erro ao cadastrar festa!");
     }
 
