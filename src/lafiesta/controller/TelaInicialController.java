@@ -191,8 +191,25 @@ public class TelaInicialController implements Initializable {
     }
 
     @FXML
-    public void handleCadastrarProdutoServico(MouseEvent event) {
+    public void handleCadastroProdServ(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
 
+        loader.setLocation(getClass().getResource("../view/CadastroServProd.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Iniciar Festa");
+        stage.setScene(scene);
+
+        CadastroServProdController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
     }
 
     @FXML
