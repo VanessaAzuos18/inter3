@@ -190,6 +190,26 @@ public class TelaInicialController implements Initializable {
         txtSair.getScene().getWindow().hide();
     }
 
+    @FXML
+    public void handleCadastrarProdutoServico(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void handleAgendaFesta(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void handleMeusProdutosServicosFornecedor(MouseEvent event) {
+
+    }
+
+    @FXML
+    public void handleMinhaContaFornecedor(MouseEvent event) {
+
+    }
+
     private void montaTelaCliente() {
         cliente.setVisible(true);
         fornecedor.setVisible(false);

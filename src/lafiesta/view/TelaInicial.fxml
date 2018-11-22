@@ -95,34 +95,29 @@
                   <Font size="1.0" />
                </font>
             </Button>
-            <AnchorPane fx:id="menuFornecedor" layoutX="480.0" layoutY="55.0" prefHeight="143.0" prefWidth="141.0" style="-fx-background-color: #f2f2f2;">
+            <AnchorPane fx:id="menuFornecedor" layoutX="430.0" layoutY="55.0" prefHeight="119.0" prefWidth="191.0" style="-fx-background-color: #f2f2f2;">
                <children>
-                  <Text layoutX="33.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minha conta">
+                  <Text layoutX="22.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meus produtos/serviços">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="11.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de convidados">
+                  <Text layoutX="21.0" layoutY="20.0" onMouseClicked="#handleListaConvidado" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar produto/serviço">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="25.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar festa">
+                  <Text layoutX="47.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agenda de festa">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="8.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
+                  <Text layoutX="57.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minha conta">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="13.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Text>
-                  <Text fx:id="txtSairFornecedor" layoutX="58.0" layoutY="132.0" onMouseClicked="#aa" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
+                  <Text fx:id="txtSairFornecedor" layoutX="83.0" layoutY="110.0" onMouseClicked="#aa" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
