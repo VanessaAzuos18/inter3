@@ -13,7 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lafiesta.model.dao.FestaDAO;
+import lafiesta.model.dao.ProdutoDAO;
 import lafiesta.model.domain.Festa;
+import lafiesta.model.domain.Produto;
 import lafiesta.model.domain.Usuario;
 import sun.plugin.javascript.navig.Anchor;
 
@@ -64,21 +66,20 @@ public class TelaInicialController implements Initializable {
     @FXML
     private AnchorPane menuFornecedor;
     @FXML
-    private TableView<Festa> tabelaFornecedor;
+    private TableView<Produto> tabelaFornecedor;
     @FXML
-    private TableColumn<Festa, Integer> idFornecedor;
+    private TableColumn<Produto, Integer> idFornecedor;
     @FXML
-    private TableColumn<Festa, String> nome_festaFornecedor;
+    private TableColumn<Produto, String> tipoProduto;
     @FXML
-    private TableColumn<Festa, String> dataFornecedor;
+    private TableColumn<Produto, String> observacao;
     @FXML
-    private TableColumn<Festa, String> localFornecedor;
-    @FXML
-    private TableColumn<Festa, Integer> convidadosFornecedor;
+    private TableColumn<Produto, String> cidade;
 
     private Usuario usuario;
 
     FestaDAO festaDAO = new FestaDAO();
+    ProdutoDAO produtoDao = new ProdutoDAO();
 
     public void setNome(String nomeUsuario){
         this.nome.setText(nomeUsuario);
@@ -139,11 +140,20 @@ public class TelaInicialController implements Initializable {
     }
 
     public void remover(ActionEvent e) {
-        Festa festaRemover = tabela.getSelectionModel().getSelectedItem();
-        if(festaDAO.remover(festaRemover.getId(), usuario.getId()))
-            tabela.setItems(festaDAO.carregaFestas(usuario.getId()));
-        else
-            JOptionPane.showMessageDialog(null, "Erro ao remover a festa!");
+        if(usuario.getTipo() == 1){
+            Festa festaRemover = tabela.getSelectionModel().getSelectedItem();
+            if(festaDAO.remover(festaRemover.getId(), usuario.getId()))
+                tabela.setItems(festaDAO.carregaFestas(usuario.getId()));
+            else
+                JOptionPane.showMessageDialog(null, "Erro ao remover a festa!");
+        }else{
+            Produto produtoRemover = tabelaFornecedor.getSelectionModel().getSelectedItem();
+            if(produtoDao.remover(produtoRemover.getId(), usuario.getId()))
+                tabelaFornecedor.setItems(produtoDao.obterMeusProdutosServicos(usuario.getId()));
+            else
+                JOptionPane.showMessageDialog(null, "Erro ao remover o produto/servico!");
+        }
+
     }
 
     @FXML
@@ -254,16 +264,14 @@ public class TelaInicialController implements Initializable {
         nomeFornecedor.setText(usuario.getNome());
 
         idFornecedor.setCellValueFactory(
-                new PropertyValueFactory<>("id"));
-        nome_festaFornecedor.setCellValueFactory(
-                new PropertyValueFactory<>("nome_festa"));
-        dataFornecedor.setCellValueFactory(
-                new PropertyValueFactory<>("Data"));
-        localFornecedor.setCellValueFactory(
-                new PropertyValueFactory<>("Local"));
-        convidadosFornecedor.setCellValueFactory(
-                new PropertyValueFactory<>("Convidados"));
+                new PropertyValueFactory<>("Id"));
+        tipoProduto.setCellValueFactory(
+                new PropertyValueFactory<>("tipo"));
+        cidade.setCellValueFactory(
+                new PropertyValueFactory<>("Cidade"));
+        observacao.setCellValueFactory(
+                new PropertyValueFactory<>("observacao"));
 
-        tabelaFornecedor.setItems(festaDAO.carregaFestas(usuario.getId()));
+        tabelaFornecedor.setItems(produtoDao.obterMeusProdutosServicos(usuario.getId()));
     }
 }

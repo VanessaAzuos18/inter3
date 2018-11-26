@@ -131,11 +131,9 @@
                </columnResizePolicy>
                <columns>
                   <TableColumn fx:id="idFornecedor" prefWidth="102.0" text="Id" />
-                  <TableColumn fx:id="nome_festaFornecedor" prefWidth="102.0" text="Nome da Festa" />
-                  <TableColumn fx:id="dataFornecedor" prefWidth="48.0" text="Data" />
-                  <TableColumn fx:id="localFornecedor" prefWidth="48.0" text="Local" />
-                  <TableColumn fx:id="convidadosFornecedor" prefWidth="88.0" text="Convidados" />
-                  <TableColumn maxWidth="40" minWidth="40" text="" />
+                  <TableColumn fx:id="tipoProduto" prefWidth="102.0" text="Tipo" />
+                  <TableColumn fx:id="cidade" prefWidth="48.0" text="Cidade" />
+                  <TableColumn fx:id="observacao" prefWidth="48.0" text="Observação" />
                </columns>
             </TableView>
             <Button id="botao-remover" fx:id="botaoCadastroFornecedor" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
