@@ -12,17 +12,17 @@ public class Produto {
 
     public Produto() {}
 
-    public Produto(String tipo, String produto, String cidade, String obs) {
+    public Produto(String tipo, String produto, String cidade, String observacao) {
         this.setTipo(tipo);
         this.setProduto(produto);
         this.setCidade(cidade);
-        this.setObservacao(obs);
+        this.setObservacao(observacao);
     }
 
-    public Produto(int id, String tipo, String obs, String cidade) {
+    public Produto(int id, String tipo, String observacao, String cidade) {
         this.setId(id);
         this.setTipo(tipo);
-        this.setObservacao(obs);
+        this.setObservacao(observacao);
         this.setCidade(cidade);
     }
 
@@ -54,7 +54,7 @@ public class Produto {
         return observacao;
     }
 
-    public void setObservacao(String obs) {
+    public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
 

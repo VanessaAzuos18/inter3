@@ -47,6 +47,7 @@ public class ProdutoDAO {
 
     public boolean cadastrarProduto(Produto produto) {
         try {
+            System.out.println(produto.getObservacao());
             String sql = "INSERT INTO produto(id_fornecedor, tipo, observacao, cidade) values (\"" + produto.getIdUsuario() + "\", \"" + produto.getTipo() + "\", \"" + produto.getObservacao() + "\", \"" + produto.getCidade() + "\");";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.execute();
