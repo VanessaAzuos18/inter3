@@ -160,17 +160,17 @@ public class TelaInicialController implements Initializable {
     void handleListaConvidado(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
 
-        loader.setLocation(getClass().getResource("../view/ListaConvidados.fxml"));
+        loader.setLocation(getClass().getResource("../view/FornecedorPrestador.fxml"));
 
         AnchorPane anchorPane = (AnchorPane) loader.load();
 
         Stage stage = new Stage();
         Scene scene = new Scene(anchorPane);
 
-        stage.setTitle("Lista de convidados");
+        stage.setTitle("Buscar Auxilio");
         stage.setScene(scene);
 
-        ListaConvidadosController controller = loader.getController();
+        FornecedorPrestadorController controller = loader.getController();
         controller.setUsuario(usuario);
 
         stage.show();

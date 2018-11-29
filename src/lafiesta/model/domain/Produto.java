@@ -7,6 +7,7 @@ public class Produto {
     private String produto;
     private String cidade;
     private String observacao;
+    private String nome;
     private int idFesta;
     private int idUsuario;
 
@@ -23,6 +24,13 @@ public class Produto {
         this.setId(id);
         this.setTipo(tipo);
         this.setObservacao(observacao);
+        this.setCidade(cidade);
+    }
+
+    public Produto(int id, String tipo, String cidade, String nome, String busca) {
+        this.setId(id);
+        this.setTipo(tipo);
+        this.setNome(nome);
         this.setCidade(cidade);
     }
 
@@ -81,5 +89,13 @@ public class Produto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
