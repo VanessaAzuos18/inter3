@@ -1,16 +1,29 @@
 package lafiesta.controller;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.mortennobel.imagescaling.ResampleFilters;
+import com.mortennobel.imagescaling.ResampleOp;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.scene.transform.Transform;
 import javafx.stage.Stage;
 import lafiesta.model.dao.FestaDAO;
 import lafiesta.model.dao.ProdutoDAO;
@@ -19,7 +32,12 @@ import lafiesta.model.domain.Produto;
 import lafiesta.model.domain.Usuario;
 import sun.plugin.javascript.navig.Anchor;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -170,6 +188,29 @@ public class TelaInicialController implements Initializable {
         stage.setTitle("Buscar Auxilio");
         stage.setScene(scene);
 
+        /*WritableImage snapshot = scene.snapshot(null);
+        File file = new File("image.png");
+        try {
+            ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Image image = Image.getInstance("C:\\Users\\user\\Documents\\Matheus\\IFSP\\Semestre_3\\Interdisciplinar\\inter3\\image.png");
+            Document document = new Document(PageSize.A4.rotate(), 80, 20, 20, 20);
+            PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\user\\Documents\\Matheus\\IFSP\\Semestre_3\\Interdisciplinar\\inter3\\doc.pdf"));
+            document.open();
+            //image.scaleAbsolute(630, 300);
+
+            document.add(image);
+            document.close();
+
+        } catch(DocumentException de) {
+
+        }*/
+
+
         ListaConvidadosController controller = loader.getController();
         controller.setUsuario(usuario);
 
@@ -193,6 +234,27 @@ public class TelaInicialController implements Initializable {
         stage.setScene(scene);
 
         IniciarFestaController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
+    }
+
+    public void handleCalculadoraBasica(MouseEvent e) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("../view/CalculadoraBasica.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Calculadora basica");
+        stage.setScene(scene);
+
+        CalculadoraBasicaController controller = loader.getController();
         controller.setUsuario(usuario);
 
         stage.show();

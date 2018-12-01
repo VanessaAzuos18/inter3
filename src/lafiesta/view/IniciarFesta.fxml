@@ -43,26 +43,26 @@
          <font>
             <Font size="14.0" />
          </font></Text>
-      <TextField fx:id="numeroConvidados" disable="true" editable="false" layoutX="42.0" layoutY="264.0" prefHeight="31.0" prefWidth="275.0" styleClass="campo-formulario">
+      <TextField fx:id="numeroConvidados" disable="true" editable="false" layoutX="42.0" layoutY="264.0" prefHeight="31.0" prefWidth="251.0" styleClass="campo-formulario">
          <padding>
             <Insets top="10.0" />
          </padding>
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleCadastrar" prefHeight="31.0" prefWidth="94.0" styleClass="botao-cadastro" text="Próximo" textFill="WHITE" />
-      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="33.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleCadastrar" prefHeight="31.0" prefWidth="94.0" styleClass="botao-cadastro" text="Próximo" textFill="WHITE" />
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="33.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../res/design/icons/arrow.png" />
          </image>
       </ImageView>
-      <Text fill="#ef3e36" layoutX="53.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
+      <Text fill="#ef3e36" layoutX="53.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
       <Text layoutX="38.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Localizar local da festa">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="botao-tela-cadastro" layoutX="518.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #2E282A;" styleClass="botao-preto" text="Localizar" textFill="WHITE" />
+      <Button id="botao-tela-cadastro" layoutX="524.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #2E282A;" styleClass="botao-preto" text="Localizar" textFill="WHITE" />
       <TextField fx:id="local" disable="true" layoutX="38.0" layoutY="378.0" prefHeight="31.0" prefWidth="439.0" promptText="Clique no botao ao lado para localizar" styleClass="campo-formulario">
          <padding>
             <Insets top="10.0" />
@@ -76,7 +76,7 @@
             <Font size="1.0" />
          </font>
       </Button>
-      <Button fx:id="voltara" layoutX="38.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
+      <Button fx:id="voltara" layoutX="38.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="15.0" prefWidth="53.0" styleClass="botao-transparente">
          <font>
             <Font size="1.0" />
          </font>

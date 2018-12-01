@@ -102,7 +102,7 @@ public class ComidaController implements Initializable {
     private void calcularComida(ComboBox grupoComida, ComboBox tipoComida) {
         Comida comida = new Comida();
 
-        boolean flag = comida.calcularComida(grupoComida.getValue().toString(), tipoComida.getSelectionModel().getSelectedIndex(), usuario.getId(), tipoComida.getValue().toString());
+        boolean flag = comida.calcularComida(grupoComida.getValue().toString(), tipoComida.getSelectionModel().getSelectedIndex(), usuario.getId(), tipoComida.getValue().toString(), true, comida);
 
         if(flag) {
             ComidaDAO comidaDAO = new ComidaDAO();

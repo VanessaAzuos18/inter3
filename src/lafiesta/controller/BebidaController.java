@@ -105,7 +105,7 @@ public class BebidaController implements Initializable {
 
         boolean flag = bebida.calcularBebida(grupoBebida.getValue().toString(),
                 tipoBebida.getSelectionModel().getSelectedIndex(), usuario.getId(),
-                tipoBebida.getValue().toString());
+                tipoBebida.getValue().toString(), true, bebida);
 
         if(flag) {
             BebidaDAO bebidaDAO = new BebidaDAO();

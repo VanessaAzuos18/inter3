@@ -1,5 +1,14 @@
 package lafiesta.model.domain;
 
+import org.jsoup.HttpStatusException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+
 public class Festa {
 
     private int id;
@@ -7,6 +16,8 @@ public class Festa {
     private String data;
     private String local;
     private int convidados;
+
+    public Festa() {}
 
     public Festa(int id, String nome_festa, String data, String local, int convidados){
         this.setId(id);
@@ -16,6 +27,90 @@ public class Festa {
         this.setConvidados(convidados);
     }
 
+    public String getEndereco(String CEP) throws IOException {
+
+        //***************************************************
+        try{
+
+            Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+CEP)
+                    .timeout(120000)
+                    .get();
+            Elements urlPesquisa = doc.select("span[itemprop=streetAddress]");
+            for (Element urlEndereco : urlPesquisa) {
+                return urlEndereco.text();
+            }
+
+        } catch (SocketTimeoutException e) {
+            System.out.println("1");
+        } catch (HttpStatusException w) {
+            System.out.println("2");
+        }
+
+        return CEP;
+    }
+
+    public String getBairro(String CEP) throws IOException {
+
+        //***************************************************
+        try{
+
+            Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+CEP)
+                    .timeout(120000)
+                    .get();
+            Elements urlPesquisa = doc.select("td:gt(1)");
+            for (Element urlBairro : urlPesquisa) {
+                return urlBairro.text();
+            }
+
+        } catch (SocketTimeoutException e) {
+
+        } catch (HttpStatusException w) {
+
+        }
+        return CEP;
+    }
+
+    public String getCidade(String CEP) throws IOException {
+
+        //***************************************************
+        try{
+
+            Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+CEP)
+                    .timeout(120000)
+                    .get();
+            Elements urlPesquisa = doc.select("span[itemprop=addressLocality]");
+            for (Element urlCidade : urlPesquisa) {
+                return urlCidade.text();
+            }
+
+        } catch (SocketTimeoutException e) {
+
+        } catch (HttpStatusException w) {
+
+        }
+        return CEP;
+    }
+
+    public String getUF(String CEP) throws IOException {
+
+        //***************************************************
+        try{
+
+            Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+CEP)
+                    .timeout(120000)
+                    .get();
+            Elements urlPesquisa = doc.select("span[itemprop=addressRegion]");
+            for (Element urlUF : urlPesquisa) {
+                return urlUF.text();
+            }
+
+        } catch (SocketTimeoutException e) {
+
+        } catch (HttpStatusException w) {
+
+        }
+        return CEP;
+    }
 
     public String getNome_festa() {
         return nome_festa;

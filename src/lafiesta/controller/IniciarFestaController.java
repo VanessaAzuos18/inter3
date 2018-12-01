@@ -1,5 +1,7 @@
 package lafiesta.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,8 @@ import lafiesta.model.domain.Usuario;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class IniciarFestaController implements Initializable {
@@ -31,6 +35,10 @@ public class IniciarFestaController implements Initializable {
     private TextField numeroConvidados;
     @FXML
     private Button voltara;
+    private IniciarFestaController controller;
+    private List<String> elementosCampos;
+    private String endereco;
+
 
     private Usuario usuario;
     private ConvidadoDAO convidadoDAO = new ConvidadoDAO();
@@ -38,10 +46,65 @@ public class IniciarFestaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        data.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if (newValue.length() > 10)
+                    data.setText(oldValue);
+            }
+        });
+
+        data.lengthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if (newValue.intValue() < 11) {
+                    String value = data.getText();
+                    value = value.replaceAll("[^0-9]", "");
+                    value = value.replaceFirst("(\\d{2})(\\d)", "$1/$2");
+                    value = value.replaceFirst("(\\d{2})\\/(\\d{2})(\\d)", "$1/$2/$3");
+                    data.setText(value);
+                }
+            }
+        });
     }
 
-    public void handleLocalizar(ActionEvent e) {
+    public void setElementosCampos(List<String> lista) {
+        elementosCampos = lista;
+        nomeFesta.setText(elementosCampos.get(0));
+        data.setText(elementosCampos.get(1));
+        numeroConvidados.setText(elementosCampos.get(2));
+    }
 
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+        local.setText(endereco);
+    }
+
+    public void handleLocalizar(ActionEvent e) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("../view/LocalizarFesta.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Localizar local");
+        stage.setScene(scene);
+
+        LocalizarFestaController controller = loader.getController();
+        controller.setElementFromIniciarFesta(nomeFesta);
+
+        elementosCampos = new ArrayList<String>();
+        elementosCampos.add(nomeFesta.getText());
+        elementosCampos.add(data.getText());
+        elementosCampos.add(numeroConvidados.getText());
+        controller.setElementosCampos(elementosCampos);
+        controller.setUsuario(usuario);
+
+        stage.show();
     }
 
     public void handleCadastrar(ActionEvent e) throws IOException {
@@ -94,5 +157,9 @@ public class IniciarFestaController implements Initializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         numeroConvidados.setText((convidadoDAO.carregarTotalConvidados(usuario.getId())));
+    }
+
+    public void setLocal(String endereco) {
+        local.setText(endereco);
     }
 }

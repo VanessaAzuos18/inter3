@@ -21,7 +21,7 @@ public class Utensilio {
         this.setQuantidade(quantidade);
     }
 
-    public boolean calcularUtensilio(String grupoUtensilio, int tipoUtensilioIndex, int idUsuario, String tipoUtensilioValue) {
+    public boolean calcularUtensilio(String grupoUtensilio, int tipoUtensilioIndex, int idUsuario, String tipoUtensilioValue, boolean cadastrarUtensilio, Utensilio utensilio) {
         double total = 0;
         String grandeza = null;
 
@@ -77,8 +77,7 @@ public class Utensilio {
 
         total = Math.ceil(total);
 
-        if (verifica == 0) {
-            Utensilio utensilio = new Utensilio();
+        if (verifica ==  0 && cadastrarUtensilio == true) {
             utensilio.setTipo(tipoUtensilioValue);
             utensilio.setGrupo(grupoUtensilio);
             utensilio.setIdFesta(idFesta);
@@ -92,7 +91,16 @@ public class Utensilio {
                 return false;
             }
         } else {
-            return false;
+            if(cadastrarUtensilio == false) {
+                utensilio.setTipo(tipoUtensilioValue);
+                utensilio.setGrupo(grupoUtensilio);
+                utensilio.setIdFesta(idFesta);
+                utensilio.setQuantidade(total + grandeza);
+
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

@@ -20,7 +20,7 @@ public class Comida {
         this.quantidade = quantidade;
     }
 
-    public boolean calcularComida(String grupoComida, int tipoComida, int idUsuario, String tipoComidaValue) {
+    public boolean calcularComida(String grupoComida, int tipoComida, int idUsuario, String tipoComidaValue, boolean cadastrarComida, Comida com) {
         double total = 0;
         String grandeza = null;
 
@@ -212,23 +212,29 @@ public class Comida {
         }
 
         total = Math.ceil(total);
-        if (verifica == 0)
+        if (verifica == 0 && cadastrarComida == true)
         {
             FestaDAO festaDAO = new FestaDAO();
-            Comida comida = new Comida();
-            comida.setTipo(tipoComidaValue);
-            comida.setGrupo(grupoComida);
-            comida.setIdFesta(festaDAO.buscarId(idUsuario));
-            comida.setQuantidade(total + grandeza);
+            com.setTipo(tipoComidaValue);
+            com.setGrupo(grupoComida);
+            com.setIdFesta(festaDAO.buscarId(idUsuario));
+            com.setQuantidade(total + grandeza);
 
-            boolean sucesso = comidaDAO.cadastrarComida(idUsuario, comida);
+            boolean sucesso = comidaDAO.cadastrarComida(idUsuario, com);
             if (sucesso) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            return false;
+            if(cadastrarComida == false) {
+                com.setTipo(tipoComidaValue);
+                com.setGrupo(grupoComida);
+                com.setQuantidade(total + grandeza);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

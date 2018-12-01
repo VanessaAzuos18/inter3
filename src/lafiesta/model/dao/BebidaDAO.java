@@ -97,4 +97,22 @@ public class BebidaDAO {
             return null;
         }
     }
+
+    public int obterTotalBebida(int idFesta) {
+        int quantidadeComida = 0;
+
+        try {
+            String sql = "SELECT COUNT(*) FROM bebida WHERE id_festa = " + idFesta + ";";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while(rset.next()) {
+                quantidadeComida = rset.getInt(1);
+            }
+
+            return quantidadeComida;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
 }

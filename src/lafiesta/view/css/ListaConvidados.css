@@ -21,6 +21,17 @@
     -fx-border-color: transparent transparent #2E282A transparent;
 }
 
+.campo-formulario-erro {
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-focus-color: transparent; /*Deixa o focus dos campos transparentes*/
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #ef3e36 transparent;
+    -fx-font-family: Glegoo;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 0 0;
+}
+
 .botao-cadastro {
     -fx-background-color: #EF3E36;
     -fx-text-fill: #FFF;
@@ -43,4 +54,25 @@
     -fx-background-color: transparent;
     -fx-cursor: hand;
     -fx-font-size: 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
 }

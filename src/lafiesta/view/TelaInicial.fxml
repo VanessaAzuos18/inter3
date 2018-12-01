@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="13.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
+                  <Text layoutX="13.0" layoutY="111.0" onMouseClicked="#handleCalculadoraBasica" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora básica">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

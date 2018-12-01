@@ -108,7 +108,7 @@ public class UtensilioController implements Initializable {
 
         boolean flag = utensilio.calcularUtensilio(grupoUtensilio.getValue().toString(),
                 tipoUtensilio.getSelectionModel().getSelectedIndex(), usuario.getId(),
-                tipoUtensilio.getValue().toString());
+                tipoUtensilio.getValue().toString(), true, utensilio);
 
         if(flag) {
             UtensilioDAO utensilioDAO = new UtensilioDAO();

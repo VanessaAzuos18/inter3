@@ -20,7 +20,7 @@ public class Bebida {
         this.quantidade = quantidade;
     }
 
-    public boolean calcularBebida(String grupoBebida, int tipoBebidaIndex, int idUsuario, String tipoBebidaValue) {
+    public boolean calcularBebida(String grupoBebida, int tipoBebidaIndex, int idUsuario, String tipoBebidaValue, boolean cadastrarBebida, Bebida bebida) {
         double total = 0;
         String grandeza = null;
 
@@ -70,8 +70,7 @@ public class Bebida {
 
         total = Math.ceil(total);
 
-        if (verifica == 0) {
-            Bebida bebida = new Bebida();
+        if (verifica == 0 && cadastrarBebida == true) {
             bebida.setTipo(tipoBebidaValue);
             bebida.setGrupo(grupoBebida);
             bebida.setIdFesta(idFesta);
@@ -85,7 +84,15 @@ public class Bebida {
                 return false;
             }
         } else {
-            return false;
+            if(cadastrarBebida == false) {
+                bebida.setTipo(tipoBebidaValue);
+                bebida.setGrupo(grupoBebida);
+                bebida.setIdFesta(idFesta);
+                bebida.setQuantidade(total + grandeza);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

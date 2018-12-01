@@ -3,8 +3,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="525.0" styleClass="achor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LocalizarFestaController">
+<AnchorPane prefHeight="422.0" prefWidth="525.0" styleClass="achor-pane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lafiesta.controller.LocalizarFestaController">
    <stylesheets>
       <URL value="@css/ConfiguracaoFonte.css" />
       <URL value="@css/ListaConvidados.css" />
@@ -25,8 +22,8 @@
          </font>
       </Text>
       <Text layoutX="95.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localize um local para festa digitando o nome da cidade" />
-      <Text layoutX="36.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cidade:" />
-      <TextField fx:id="cidade" layoutX="36.0" layoutY="130.0" prefHeight="27.0" prefWidth="340.0" styleClass="campo-formulario">
+      <Text layoutX="36.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="CEP:" />
+      <TextField fx:id="cep" layoutX="36.0" layoutY="127.0" prefHeight="27.0" prefWidth="77.0" styleClass="campo-formulario">
          <padding>
             <Insets left="-1.0" />
          </padding>
@@ -34,23 +31,72 @@
             <Font name="Glegoo" size="12.0" />
          </font>
       </TextField>
-      <Button layoutX="404.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleLocalizar" prefHeight="28.0" prefWidth="88.0" styleClass="botao-preto" text="Buscar" />
-      <TableView fx:id="tabela" layoutX="36.0" layoutY="170.0" prefHeight="147.0" prefWidth="456.0">
-        <columns>
-          <TableColumn prefWidth="454.6666564941406" text="Endereço" />
-        </columns>
-      </TableView>
-      <Button layoutX="392.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleSelecionar" prefHeight="34.0" prefWidth="100.0" styleClass="botao-cadastro" text="Selecionar" />
-      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="36.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <Button layoutX="392.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleSalvarLocal" prefHeight="34.0" prefWidth="100.0" styleClass="botao-cadastro" text="Salvar local" />
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="29.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../../res/design/icons/arrow.png" />
          </image>
       </ImageView>
-      <Text fill="#ef3e36" layoutX="58.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fechar tela" />
-      <Button layoutX="39.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleFecharTela" prefHeight="1.0" prefWidth="88.0" styleClass="botao-transparente">
+      <Text fill="#ef3e36" layoutX="51.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fechar tela" />
+      <Button layoutX="32.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleFecharTela" prefHeight="1.0" prefWidth="88.0" styleClass="botao-transparente">
          <font>
             <Font size="1.0" />
          </font>
       </Button>
+      <Text layoutX="170.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Rua:" />
+      <TextField fx:id="rua" layoutX="170.0" layoutY="127.0" prefHeight="27.0" prefWidth="320.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="36.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Número:" />
+      <TextField fx:id="numero" layoutX="36.0" layoutY="213.0" prefHeight="27.0" prefWidth="77.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="170.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Complemento:" />
+      <TextField fx:id="complemento" layoutX="170.0" layoutY="212.0" prefHeight="27.0" prefWidth="118.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="331.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Bairro:" />
+      <TextField fx:id="bairro" layoutX="331.0" layoutY="213.0" prefHeight="27.0" prefWidth="160.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="36.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Estado:" />
+      <TextField fx:id="estado" disable="true" layoutX="36.0" layoutY="299.0" prefHeight="27.0" prefWidth="100.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="185.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cidade:" />
+      <TextField fx:id="cidade" disable="true" layoutX="186.0" layoutY="300.0" prefHeight="27.0" prefWidth="306.0" styleClass="campo-formulario">
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+         <font>
+            <Font name="Glegoo" size="12.0" />
+         </font>
+      </TextField>
+      <Text fx:id="cepInvalido" fill="#ef3e36" layoutX="36.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cep inválido" />
    </children>
 </AnchorPane>
