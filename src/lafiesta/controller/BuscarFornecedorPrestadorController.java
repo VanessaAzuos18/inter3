@@ -12,12 +12,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import lafiesta.model.dao.AluguelDAO;
 import lafiesta.model.dao.BebidaDAO;
+import lafiesta.model.dao.FestaDAO;
 import lafiesta.model.dao.ProdutoDAO;
 import lafiesta.model.domain.Bebida;
 import lafiesta.model.domain.Produto;
 import lafiesta.model.domain.Usuario;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,6 +44,9 @@ public class BuscarFornecedorPrestadorController implements Initializable {
 
     private Usuario usuario;
     ProdutoDAO produtoDAO = new ProdutoDAO();
+    FestaDAO festaDAO = new FestaDAO();
+    AluguelDAO aluguelDAO = new AluguelDAO();
+    FornecedorPrestadorController fornecedorPrestadorController = new FornecedorPrestadorController();
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -48,14 +54,17 @@ public class BuscarFornecedorPrestadorController implements Initializable {
 
 
     public void handleSelecionar(ActionEvent e) throws IOException {
-
+        int idFesta = festaDAO.buscarId(usuario.getId());
+        boolean flag = aluguelDAO.cadastrarAluguel(tabelaAuxilio.getSelectionModel().getSelectedItem().getId(), idFesta);
+        if(flag)
+            JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
+        else
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar!");
     }
 
     public void handleBuscarAuxilio(ActionEvent e) throws IOException {
         String tipo = cbCategoria.getSelectionModel().getSelectedItem().toString();
         tabelaAuxilio.setItems(produtoDAO.buscarProdutos(tipo, textCidade.getText()));
-
-
     }
 
     @Override

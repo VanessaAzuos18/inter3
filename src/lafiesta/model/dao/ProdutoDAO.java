@@ -110,7 +110,7 @@ public class ProdutoDAO {
     public ObservableList<Produto> buscarProdutos(String categoria, String cidade) {
         ObservableList<Produto> produtos = FXCollections.observableArrayList();
         try {
-            String sql = "select u.id, p.tipo, p.cidade, u.nome from produto p inner join usuario u on p.id_fornecedor = u.id where p.tipo = '" + categoria + "' and p.cidade = '" + cidade + "'";
+            String sql = "select p.id, p.tipo, p.cidade, u.nome from produto p inner join usuario u on p.id_fornecedor = u.id where p.tipo = '" + categoria + "' and p.cidade = '" + cidade + "'";
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rset = stmt.executeQuery();
             while(rset.next()){

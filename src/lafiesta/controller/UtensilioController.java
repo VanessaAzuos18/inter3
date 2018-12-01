@@ -44,8 +44,25 @@ public class UtensilioController implements Initializable {
     private Usuario usuario;
 
 
-    public void handleAvancar(ActionEvent e) {
+    public void handleAvancar(ActionEvent e) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
 
+        loader.setLocation(getClass().getResource("../view/FornecedorPrestador.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Fornecedor Prestador");
+        stage.setScene(scene);
+
+        FornecedorPrestadorController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        voltara.getScene().getWindow().hide();
     }
 
     public void handleVoltar(ActionEvent e) throws IOException {
