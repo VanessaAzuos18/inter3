@@ -84,6 +84,27 @@ public class FornecedorPrestadorController implements Initializable {
         stage.show();
     }
 
+    public void handleAvancar(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("../view/GerarRelatorio.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Gerar relatorio");
+        stage.setScene(scene);
+
+        GerarRelatorioController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        voltar.getScene().getWindow().hide();
+    }
+
     public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 
     public void voltar(ActionEvent e) throws IOException {
