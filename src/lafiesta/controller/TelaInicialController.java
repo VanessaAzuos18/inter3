@@ -223,13 +223,25 @@ public class TelaInicialController implements Initializable {
     }
 
     @FXML
-    public void handleAgendaFesta(MouseEvent event) {
+    public void handleAgendaFesta(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
 
-    }
+        loader.setLocation(getClass().getResource("../view/AgendaFesta.fxml"));
 
-    @FXML
-    public void handleMeusProdutosServicosFornecedor(MouseEvent event) {
+        AnchorPane anchorPane = (AnchorPane) loader.load();
 
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Minha Conta");
+        stage.setScene(scene);
+
+        AgendaFestaController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
     }
 
     @FXML

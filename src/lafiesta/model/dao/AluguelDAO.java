@@ -50,4 +50,25 @@ public class AluguelDAO {
             return false;
         }
     }
+
+    public ObservableList<Aluguel> agendaFestas(int idUsuario) {
+        ObservableList<Aluguel> alugueis = FXCollections.observableArrayList();
+        try {
+            String sql = "select p.tipo, p.cidade, f.nome_festa, f.data, u.nome, u.telefone from usuario u, produto p, \n" +
+                    "aluguel a inner join festa f on f.id = a.id_festa where a.id_produto = p.id\n" +
+                    "and f.id_usuario = u.id and id_fornecedor = " + idUsuario + ";";
+
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while (rset.next()) {
+                alugueis.add(new Aluguel(rset.getString("tipo"), rset.getString("cidade"),
+                        rset.getString("nome_festa"), rset.getString("data"),
+                        rset.getString("nome"), rset.getString("telefone")));
+            }
+            return alugueis;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConvidadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
 }
