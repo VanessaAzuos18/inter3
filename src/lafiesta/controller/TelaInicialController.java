@@ -233,8 +233,25 @@ public class TelaInicialController implements Initializable {
     }
 
     @FXML
-    public void handleMinhaContaFornecedor(MouseEvent event) {
+    public void handleMinhaConta(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
 
+        loader.setLocation(getClass().getResource("../view/MinhaConta.fxml"));
+
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+
+        Stage stage = new Stage();
+        Scene scene = new Scene(anchorPane);
+
+        stage.setTitle("Minha Conta");
+        stage.setScene(scene);
+
+        MinhaContaController controller = loader.getController();
+        controller.setUsuario(usuario);
+
+        stage.show();
+
+        txtSair.getScene().getWindow().hide();
     }
 
     private void montaTelaCliente() {

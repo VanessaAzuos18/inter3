@@ -164,7 +164,7 @@ public class CadastroController implements Initializable {
                 usuario.setEmail(email);
                 usuario.setEndereco(endereco);
                 usuario.setTelefone(telefone);
-                usuario.setCpf(cnpj);
+                usuario.setCnpj(cnpj);
                 usuario.setSenha(senha);
                 usuario.setTipo(2);
 

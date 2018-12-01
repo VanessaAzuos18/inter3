@@ -73,6 +73,30 @@ public class UsuarioDAO {
                         usuario.getEndereco() + "\", \"" + usuario.getTelefone() + "\", \"" + usuario.getSenha() + "\", \"" + usuario.getEmail() + "\", " + usuario.getTipo() + ", \"" + usuario.getCnpj() + "\");";
             }
 
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.executeUpdate();
+
+            return true;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean atualizar(Usuario usuario){
+        try {
+            String sql = null;
+
+            if(usuario.getTipo() == 1){
+                sql = "UPDATE usuario SET nome =  \"" + usuario.getNome() + "\", nome_usuario = \"" + usuario.getNome() + "\", endereco = \"" + usuario.getEndereco() +
+                      "\", telefone = \"" + usuario.getTelefone() + "\", senha = \"" + usuario.getSenha() + "\", email = \"" + usuario.getEmail() + "\", cpf = \"" +
+                      usuario.getCpf() + "\" WHERE id = " + usuario.getId() + ";";
+            }else if(usuario.getTipo() == 2){
+                sql = "UPDATE usuario SET nome =  \"" + usuario.getNome() + "\", nome_usuario = \"" + usuario.getNome() + "\", endereco = \"" + usuario.getEndereco() +
+                        "\", telefone = \"" + usuario.getTelefone() + "\", senha = \"" + usuario.getSenha() + "\", email = \"" + usuario.getEmail() + "\", cnpj = \"" +
+                        usuario.getCnpj() + "\" WHERE id = " + usuario.getId() + ";";
+            }
+
             System.out.println(sql);
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.executeUpdate();

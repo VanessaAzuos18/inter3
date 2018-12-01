@@ -39,7 +39,7 @@
          </image>
       </ImageView>
       <Text fill="#ef3e36" layoutX="67.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltar" />
-      <Button fx:id="voltar" layoutX="48.0" layoutY="531.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="55.0" styleClass="botao-transparente">
+      <Button fx:id="voltar" layoutX="48.0" layoutY="531.0" mnemonicParsing="false" onAction="#voltar" prefHeight="28.0" prefWidth="55.0" styleClass="botao-transparente">
          <font>
             <Font size="1.0" />
          </font>
