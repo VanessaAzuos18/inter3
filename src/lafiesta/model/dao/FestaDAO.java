@@ -39,6 +39,25 @@ public class FestaDAO {
         }
     }
 
+    public String[] carregarFestaEspecifica(int idFesta) {
+        String[] festaEspecifica = new String[3];
+
+        try {
+            String sql = "SELECT * FROM festa where id = " + idFesta + ";";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while(rset.next()){
+                festaEspecifica[0] = rset.getString("data");
+                festaEspecifica[1] = rset.getString("local");
+                festaEspecifica[2] = rset.getString("convidados");
+            }
+            return festaEspecifica;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
     public boolean remover(int index, int id){
         try {
             String sql = null;

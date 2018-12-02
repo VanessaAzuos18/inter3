@@ -16,10 +16,7 @@ import lafiesta.model.dao.BebidaDAO;
 import lafiesta.model.dao.ComidaDAO;
 import lafiesta.model.dao.FestaDAO;
 import lafiesta.model.dao.UtensilioDAO;
-import lafiesta.model.domain.Bebida;
-import lafiesta.model.domain.Comida;
-import lafiesta.model.domain.Relatorio;
-import lafiesta.model.domain.Utensilio;
+import lafiesta.model.domain.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -64,6 +61,15 @@ public class RelatorioController implements Initializable {
     @FXML
     private Text textoUtensilio;
 
+    @FXML
+    private Text localFesta;
+    @FXML
+    private Text totalConvidados;
+    @FXML
+    private Text dataFesta;
+
+    private Usuario usuario;
+
     /*public void handleGerarPdf() {
         PrinterJob job = PrinterJob.createPrinterJob();
         if (job != null) {
@@ -77,6 +83,22 @@ public class RelatorioController implements Initializable {
 
     public void handleVoltar() {
 
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+
+        FestaDAO festaDAO = new FestaDAO();
+
+        int idFesta = festaDAO.buscarId(usuario.getId());
+
+        String[] festaEspecifica;
+
+        festaEspecifica = festaDAO.carregarFestaEspecifica(idFesta);
+
+        localFesta.setText(festaEspecifica[1]);
+        totalConvidados.setText(festaEspecifica[2]);
+        dataFesta.setText(festaEspecifica[0]);
     }
 
     @Override

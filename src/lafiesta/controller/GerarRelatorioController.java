@@ -1,5 +1,7 @@
 package lafiesta.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lafiesta.model.dao.FestaDAO;
+import lafiesta.model.domain.Festa;
 import lafiesta.model.domain.Usuario;
 
 import javax.imageio.ImageIO;
@@ -44,6 +47,16 @@ public class GerarRelatorioController implements Initializable {
 
         Stage stage = new Stage();
         Scene scene = new Scene(anchorPane);
+        /*
+        FestaDAO
+        ObservableList<Festa> festaEspecifica = FXCollections.observableArrayList(festaDAO.carregarFestaEspecifica(idFesta));
+
+        localFesta.setText(festaEspecifica.get(0).getLocal());
+        dataFesta.setText(festaEspecifica.get(0).getData());
+        totalConvidados.setText(String.valueOf(festaEspecifica.get(0).getConvidados()));*/
+
+        RelatorioController controller = loader.getController();
+        controller.setUsuario(usuario);
 
 
         WritableImage snapshot = scene.snapshot(null);
