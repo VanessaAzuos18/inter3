@@ -99,10 +99,11 @@ public class RelatorioController implements Initializable {
         localFesta.setText(festaEspecifica[1]);
         totalConvidados.setText(festaEspecifica[2]);
         dataFesta.setText(festaEspecifica[0]);
+
+        montaRelatorio();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void montaRelatorio() {
         colunaGrupoComida.setCellValueFactory(
                 new PropertyValueFactory<>("grupo"));
         colunaTipoComida.setCellValueFactory(
@@ -113,7 +114,7 @@ public class RelatorioController implements Initializable {
 
         ComidaDAO comidaDAO = new ComidaDAO();
 
-        int totalComida = comidaDAO.obterTotalComida(2);
+        int totalComida = comidaDAO.obterTotalComida(usuario.getId());
         /*if(totalComida == 1) {
             tabela.setPrefHeight(60*totalComida);
         } else if(totalComida == 2) {
@@ -125,7 +126,7 @@ public class RelatorioController implements Initializable {
         }*/
         System.out.println(30*totalComida);
 
-        tabela.setItems(comidaDAO.obterComida(2));
+        tabela.setItems(comidaDAO.obterComida(usuario.getId()));
         tabela.setFixedCellSize(30);
         tabela.prefHeightProperty().bind(tabela.fixedCellSizeProperty().multiply(Bindings.size(tabela.getItems()).add(0.93)));
         tabela.minHeightProperty().bind(tabela.prefHeightProperty());
@@ -145,7 +146,7 @@ public class RelatorioController implements Initializable {
                 new PropertyValueFactory<>("quantidade"));
 
         FestaDAO festaDAO = new FestaDAO();
-        int idFesta = festaDAO.buscarId(2);
+        int idFesta = festaDAO.buscarId(usuario.getId());
         System.out.println(idFesta);
 
         BebidaDAO bebidaDAO = new BebidaDAO();
@@ -195,6 +196,11 @@ public class RelatorioController implements Initializable {
             tabelaUtensilio.setVisible(false);
             textoUtensilio.setVisible(false);
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
 
