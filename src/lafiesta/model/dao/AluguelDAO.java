@@ -39,6 +39,22 @@ public class AluguelDAO {
         }
     }
 
+    public int obterTotalAluguel(int idFesta) {
+        int total = 0;
+        try {
+            String sql = "SELECT COUNT(*) FROM aluguel where id_festa = " + idFesta + " order by id;";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet rset = stmt.executeQuery();
+            while(rset.next()){
+                total = rset.getInt(1);
+            }
+            return total;
+        } catch(SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
     public boolean cadastrarAluguel(int idProduto, int idFesta) {
         try {
             String sql = "INSERT INTO aluguel(id_produto, id_festa) values (" + idProduto + ", "  +idFesta + ");";

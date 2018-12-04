@@ -12,10 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import lafiesta.model.dao.BebidaDAO;
-import lafiesta.model.dao.ComidaDAO;
-import lafiesta.model.dao.FestaDAO;
-import lafiesta.model.dao.UtensilioDAO;
+import lafiesta.model.dao.*;
 import lafiesta.model.domain.*;
 
 import java.net.URL;
@@ -67,6 +64,17 @@ public class RelatorioController implements Initializable {
     private Text totalConvidados;
     @FXML
     private Text dataFesta;
+
+    @FXML
+    private TableView<Aluguel> tabelaAuxilio;
+    @FXML
+    private TableColumn<Aluguel, Integer> id;
+    @FXML
+    private TableColumn<Aluguel, String> tipo;
+    @FXML
+    private TableColumn<Aluguel, String> cidade;
+    @FXML
+    private Text textoAuxilio;
 
     private Usuario usuario;
 
@@ -195,6 +203,31 @@ public class RelatorioController implements Initializable {
         } else {
             tabelaUtensilio.setVisible(false);
             textoUtensilio.setVisible(false);
+        }
+
+        id.setCellValueFactory(
+                new PropertyValueFactory<>("id"));
+        tipo.setCellValueFactory(
+                new PropertyValueFactory<>("tipo"));
+        cidade.setCellValueFactory(
+                new PropertyValueFactory<>("cidade"));
+
+        AluguelDAO aluguelDAO = new AluguelDAO();
+
+        int totalAluguel = aluguelDAO.obterTotalAluguel(idFesta);
+
+        if(totalAluguel != 0) {
+            textoAuxilio.setLayoutY(textoUtensilio.getLayoutY()+tabelaUtensilio.getPrefHeight()+40);
+            tabelaAuxilio.setLayoutY(tabelaUtensilio.getLayoutY()+tabelaUtensilio.getPrefHeight()+40);
+
+            tabelaAuxilio.setItems(aluguelDAO.obterAlugueis(idFesta));
+            tabelaAuxilio.setFixedCellSize(30);
+            tabelaAuxilio.prefHeightProperty().bind(tabelaAuxilio.fixedCellSizeProperty().multiply(Bindings.size(tabelaAuxilio.getItems()).add(0.93)));
+            tabelaAuxilio.minHeightProperty().bind(tabelaAuxilio.prefHeightProperty());
+            tabelaAuxilio.maxHeightProperty().bind(tabelaAuxilio.prefHeightProperty());
+        } else {
+            tabelaAuxilio.setVisible(false);
+            textoAuxilio.setVisible(false);
         }
     }
 

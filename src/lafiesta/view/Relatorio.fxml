@@ -98,7 +98,19 @@
                   <Image url="@../../res/design/logo.png" />
                </image>
             </ImageView>
+            <TableView fx:id="tabelaAuxilio" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0" style="-fx-background-color: transparent;">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="172.6666603088379" style="-fx-alignment: CENTER;" text="ID" />
+                  <TableColumn fx:id="tipo" prefWidth="193.9999542236328" style="-fx-alignment: CENTER;" text="PRODUTO" />
+                  <TableColumn fx:id="cidade" prefWidth="200.00003051757812" style="-fx-alignment: CENTER;" text="CIDADE" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
+      <Text fx:id="textoAuxilio" layoutX="52.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auxílios:">
+         <font>
+            <Font name="Glegoo" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
