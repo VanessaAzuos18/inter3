@@ -45,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Text>
-                  <Text layoutX="8.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
+                  <Text layoutX="8.0" layoutY="88.0" onMouseClicked="#handleBuscarFornecedor" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar fornecedores">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
