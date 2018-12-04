@@ -42,9 +42,9 @@
       </Text>
       <TableView fx:id="tabela" layoutX="42.0" layoutY="284.0" prefHeight="200.0" prefWidth="566.0">
          <columns>
-            <TableColumn fx:id="colunaGrupoBebida" prefWidth="178.66672134399414" text="C1" />
-            <TableColumn fx:id="colunaTipoBebida" prefWidth="199.9999237060547" text="C2" />
-            <TableColumn fx:id="colunaQuantidade" prefWidth="188.00009155273438" text="Column X" />
+            <TableColumn fx:id="colunaGrupoBebida" prefWidth="178.66672134399414" text="TIPO" />
+            <TableColumn fx:id="colunaTipoBebida" prefWidth="199.9999237060547" text="BEBIDA" />
+            <TableColumn fx:id="colunaQuantidade" prefWidth="188.00009155273438" text="QUANTIDADE" />
          </columns>
       </TableView>
       <Text layoutX="42.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caso você não precise desse cálculo, siga adiante!">

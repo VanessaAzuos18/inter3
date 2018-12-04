@@ -69,7 +69,7 @@
                   <TableColumn fx:id="colunaQuantidade" prefWidth="200.00003051757812" style="-fx-alignment: CENTER;" text="QUANTIDADE" />
                </columns>
             </TableView>
-            <TableView fx:id="tabelaBebida" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0" style="-fx-background-color: transparent;">
+            <TableView fx:id="tabelaBebida" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0">
                <columns>
                   <TableColumn fx:id="colunaGrupoBebida" prefWidth="172.6666603088379" style="-fx-alignment: CENTER;" text="TIPO" />
                   <TableColumn fx:id="colunaTipoBebida" prefWidth="193.9999542236328" style="-fx-alignment: CENTER;" text="COMIDA" />
@@ -86,7 +86,7 @@
                   <Font name="Glegoo" size="14.0" />
                </font>
             </Text>
-            <TableView fx:id="tabelaUtensilio" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0" style="-fx-background-color: transparent;">
+            <TableView fx:id="tabelaUtensilio" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0">
                <columns>
                   <TableColumn fx:id="colunaGrupoUtensilio" prefWidth="172.6666603088379" style="-fx-alignment: CENTER;" text="TIPO" />
                   <TableColumn fx:id="colunaTipoUtensilio" prefWidth="193.9999542236328" style="-fx-alignment: CENTER;" text="COMIDA" />
@@ -98,7 +98,7 @@
                   <Image url="@../../res/design/logo.png" />
                </image>
             </ImageView>
-            <TableView fx:id="tabelaAuxilio" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0" style="-fx-background-color: transparent;">
+            <TableView fx:id="tabelaAuxilio" layoutX="53.0" layoutY="235.0" prefHeight="104.0" prefWidth="568.0">
                <columns>
                   <TableColumn fx:id="id" prefWidth="172.6666603088379" style="-fx-alignment: CENTER;" text="ID" />
                   <TableColumn fx:id="tipo" prefWidth="193.9999542236328" style="-fx-alignment: CENTER;" text="PRODUTO" />

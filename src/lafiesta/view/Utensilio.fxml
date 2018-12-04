@@ -27,12 +27,12 @@
             <Font name="Glegoo" size="12.0" />
          </font>
       </Text>
-      <Text layoutX="42.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione um utensílio">
+      <Text layoutX="42.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o utensílio que você servirá:">
          <font>
             <Font name="Glegoo" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="417.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione a capacidade:">
+      <Text layoutX="417.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o tipo:">
          <font>
             <Font name="Glegoo" size="14.0" />
          </font>
@@ -46,9 +46,9 @@
       </Text>
       <TableView fx:id="tabela" layoutX="42.0" layoutY="284.0" prefHeight="200.0" prefWidth="566.0">
          <columns>
-            <TableColumn fx:id="colunaGrupoUtensilio" prefWidth="187.3332862854004" text="C1" />
-            <TableColumn fx:id="colunaTipoUtensilio" prefWidth="199.33335876464844" text="C2" />
-            <TableColumn fx:id="colunaQuantidadeUtensilio" prefWidth="182.66665649414062" text="Column X" />
+            <TableColumn fx:id="colunaGrupoUtensilio" prefWidth="187.3332862854004" text="TIPO" />
+            <TableColumn fx:id="colunaTipoUtensilio" prefWidth="199.33335876464844" text="UTENSÍLIO" />
+            <TableColumn fx:id="colunaQuantidadeUtensilio" prefWidth="182.66665649414062" text="QUANTIDADE" />
          </columns>
       </TableView>
       <Text layoutX="42.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caso você não precise desse cálculo, siga adiante!">
