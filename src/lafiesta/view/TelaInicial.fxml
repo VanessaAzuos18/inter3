@@ -76,7 +76,12 @@
                   <TableColumn maxWidth="40" minWidth="40" text="" />
                </columns>
             </TableView>
-            <Button id="botao-remover" fx:id="botaoCadastro" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
+            <Button id="botao-remover" fx:id="botaoCadastro" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover Festa" textFill="WHITE" />
+            <Button id="botao-branco-perola" layoutX="331.0" layoutY="475.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="botao-adicionar" stylesheets="@css/TelaInicial.css" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="fornecedor" prefHeight="590.0" prefWidth="650.0">
@@ -131,7 +136,12 @@
                   <TableColumn fx:id="observacao" prefWidth="48.0" text="Observação" />
                </columns>
             </TableView>
-            <Button id="botao-remover" fx:id="botaoCadastroFornecedor" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover" textFill="WHITE" />
+            <Button id="botao-remover" fx:id="botaoCadastroFornecedor" layoutX="465.0" layoutY="479.0" mnemonicParsing="false" onAction="#remover" prefHeight="33.0" prefWidth="107.0" styleClass="botao" text="Remover festa" textFill="WHITE" />
+            <Button id="botao-branco-perola" layoutX="331.0" layoutY="475.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="botao-adicionar" stylesheets="@css/TelaInicial.css" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </children>
